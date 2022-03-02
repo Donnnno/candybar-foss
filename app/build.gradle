@@ -51,7 +51,6 @@ android {
         release {
             signingConfig signingConfigs.release
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -64,6 +63,4 @@ android {
 dependencies {
     implementation project(':library')
 
-    // TODO: Remove `//` below to enable OneSignal
-    //implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
 }
