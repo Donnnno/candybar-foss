@@ -126,10 +126,11 @@ public class LauncherHelper {
                 return Launcher.BLACKBERRY;
             case "projekt.launcher":
                 return Launcher.HYPERION;
+            case "com.saggitt.omega":
+            case "com.saggitt.omega.OmegaLauncher":
+                return Launcher.OMEGA;
             default:
                 return Launcher.UNKNOWN;
-            case "com.saggitt.omega":
-                return Launcher.OMEGA;
         }
     }
 
@@ -280,7 +281,6 @@ public class LauncherHelper {
                         applyManual(context, launcherPackage, launcherName, "app.lawnchair.ui.preferences.PreferenceActivity");
                         break;
                     }
-
                     final Intent lawnchair = new Intent("ch.deletescape.lawnchair.APPLY_ICONS", null);
                     lawnchair.putExtra("packageName", context.getPackageName());
                     context.startActivity(lawnchair);
@@ -406,10 +406,10 @@ public class LauncherHelper {
                 break;
             case OMEGA:
                 try {
-                    final Intent omega = new Intent("com.saggitt.omega.APPLY_ICONS");
-                    omega.setComponent(ComponentName.unflattenFromString("com.saggitt.omega.iconpack.ApplyIconPackActivity"));
+                    final Intent omega = new Intent("com.saggitt.omega.APPLY_ICONS", null);
                     omega.putExtra("packageName", context.getPackageName());
                     context.startActivity(omega);
+                    ((AppCompatActivity) context).finish();
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }

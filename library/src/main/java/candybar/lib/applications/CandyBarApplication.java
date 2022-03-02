@@ -529,4 +529,5 @@ public abstract class CandyBarApplication extends MultiDexApplication {
             super(icon, title, description, url);
         }
     }
+
 }

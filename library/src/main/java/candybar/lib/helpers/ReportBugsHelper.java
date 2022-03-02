@@ -141,8 +141,9 @@ public class ReportBugsHelper {
                 }
             }
 
-            boolean first = true;
+            IconsHelper.computeTitles(context, icons);
             HashSet<String> addedIcons = new HashSet<>();
+            boolean first = true;
             for (Icon icon : icons) {
                 if (first) {
                     first = false;

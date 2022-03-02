@@ -30,8 +30,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.android.billingclient.api.BillingClient;
-import com.android.billingclient.api.Purchase;
 import com.danimahardhika.android.helpers.animation.AnimationHelper;
 import com.danimahardhika.android.helpers.core.ColorHelper;
 import com.danimahardhika.android.helpers.core.FileHelper;
@@ -50,8 +48,6 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
@@ -65,8 +61,6 @@ import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
-import candybar.lib.utils.InAppBillingClient;
-import candybar.lib.utils.listeners.InAppBillingListener;
 import candybar.lib.utils.listeners.RequestListener;
 
 import static candybar.lib.helpers.DrawableHelper.getReqIcon;
@@ -243,8 +237,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     if (!RequestHelper.isReadyToSendPremiumRequest(requireActivity())) return;
 
                     try {
-                        InAppBillingListener listener = (InAppBillingListener) requireActivity();
-                        listener.onInAppBillingRequest();
+
                     } catch (Exception ignored) {
                     }
                     return;
@@ -448,34 +441,6 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                         if (resolveInfos.size() == 0) {
                             noEmailClientError = true;
                             return false;
-                        }
-
-                        if (Preferences.get(requireActivity()).isPremiumRequest()) {
-                            AtomicBoolean hasDetailsLoaded = new AtomicBoolean(false);
-                            CountDownLatch doneSignal = new CountDownLatch(1);
-
-                            InAppBillingClient.get(requireActivity()).getClient().queryPurchasesAsync(
-                                    BillingClient.SkuType.INAPP, (billingResult, purchases) -> {
-                                        if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-                                            String premiumRequestProductId = Preferences.get(requireActivity()).getPremiumRequestProductId();
-                                            for (Purchase purchase : purchases) {
-                                                if (purchase.getSkus().contains(premiumRequestProductId)) {
-                                                    CandyBarApplication.sRequestProperty = new Request.Property(null,
-                                                            purchase.getOrderId(), premiumRequestProductId);
-                                                    hasDetailsLoaded.set(true);
-                                                    break;
-                                                }
-                                            }
-                                        } else {
-                                            LogUtil.e("Failed to load purchase data. Response Code: " + billingResult.getResponseCode());
-                                        }
-
-                                        doneSignal.countDown();
-                                    });
-
-                            doneSignal.await();
-
-                            if (!hasDetailsLoaded.get()) return false;
                         }
 
                         File appFilter = RequestHelper.buildXml(requireActivity(), requests, RequestHelper.XmlType.APPFILTER);

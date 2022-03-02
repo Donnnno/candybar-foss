@@ -657,9 +657,6 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                                 DonationLinksFragment.showDonationLinksDialog(((AppCompatActivity) mContext).getSupportFragmentManager());
                                 break;
                             }
-
-                            CandyBarMainActivity mainActivity = (CandyBarMainActivity) mContext;
-                            mainActivity.showSupportDevelopmentDialog();
                         }
                         break;
                     case ICONS:
