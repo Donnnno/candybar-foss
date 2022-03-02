@@ -1,4 +1,0 @@
-jdk: openjdk11
-install:
-  - chmod +x gradlew
-  - ./gradlew build :extLibs:PreLollipopTransitions:publishToMavenLocal :library:publishToMavenLocal

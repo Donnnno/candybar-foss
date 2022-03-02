@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date">August 04, 2019</string>
+    <string name="changelog_date" translatable="false">December 4, 2021</string>
 
     <!-- Changelog support html formatting
     * <b> for Bold
@@ -10,13 +10,11 @@
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>First Changelog</item>
-        <item>Second Changelog</item>
-        <item>
-            <![CDATA[
-            Formatted Changelog with <u>Underline</u>, <b>Bold</b>, <i>Italic</i> and <a href="https://your.link.here">Link</a>.
-            ]]>
-        </item>
+        <item>Updated Android Gradle Plugin</item>
+        <item>Analog clock is now resizable</item>
+        <item>Added Lawnchair 12</item>
+        <item>Fixed \`Broken drawables\` in report bugs</item>
+        <item>Added support for using donation links</item>
     </string-array>
 
 </resources>
