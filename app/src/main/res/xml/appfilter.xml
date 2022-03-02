@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <iconback img1="iconback" />
+    <iconmask img1="iconmask" />
+    <scale factor="0.64" />
+
+    <!-- Nova Launcher Stuff -->
+    <item component=":BROWSER" drawable="browser" />
+    <item component=":CALCULATOR" drawable="calculator" />
+    <item component=":CALENDAR" drawable="calendar" />
+    <item component=":CAMERA" drawable="camera" />
+    <item component=":CLOCK" drawable="clock" />
+    <item component=":CONTACTS" drawable="contacts" />
+    <item component=":EMAIL" drawable="email" />
+    <item component=":GALLERY" drawable="gallery" />
+    <item component=":PHONE" drawable="phone" />
+    <item component=":SMS" drawable="messaging" />
+    <item component=":LAUNCHER_ACTION_APP_DRAWER" drawable="app_drawer" />
+
+    <item component="ComponentInfo{some.app.sample/some.app.sample.MainActivity}" drawable="some_app" />
+
+</resources>
