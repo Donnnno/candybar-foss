@@ -1,1 +1,1 @@
-include ':app', ':libs:candybar', ':libs:extLibs:PreLollipopTransitions'
+include ':app', ':library', ':extLibs:PreLollipopTransitions'
