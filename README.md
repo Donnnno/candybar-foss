@@ -42,12 +42,12 @@ Just explore the wiki to get started.
 ### [Wiki ➜](https://github.com/zixpo/candybar-sample/wiki)
 
 # Features
-- License checker
+~~- License checker~~ 
 - Apply: 32 launchers
 - Icon picker: See all icons
 - Icon request
-  - Regular request: Free to request
-  - Premium request: Pay to request
+  - Regular request: Free to request 
+  - ~~Premium request: Pay to request~~ 
   - Support for [Arctic Request Manager](https://arcticmanager.com)
 - Cloud based wallpaper
   - Preview wallpaper
@@ -56,14 +56,14 @@ Just explore the wiki to get started.
 - Settings
   - Clear cache
   - Switch themes - Auto/Light/Dark
-  - Restore purchases: Restore premium requests after reinstalling
+  - ~~Restore purchases: Restore premium requests after reinstalling~~ 
 - Frequently asked questions with search
 - About
-- Donation
+- Donation links
 - Changelog: Shown on every update
 - Muzei live wallpaper
 - Localization: Supports many languages
-- Support for OneSignal notifications
+- ~~Support for OneSignal notifications~~
 - Check for updates
 - Control your dashboard remotely with configuration JSON
 
