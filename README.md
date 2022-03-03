@@ -1,7 +1,12 @@
-# CandyBar
-[![JitPack](https://img.shields.io/jitpack/v/github/zixpo/candybar?color=4c1&label=JitPack&style=flat-square)](https://jitpack.io/#zixpo/candybar)
-[![Build Status](https://img.shields.io/travis/com/zixpo/candybar?style=flat-square)](https://travis-ci.com/zixpo/candybar)
+# CandyBar - FOSS
+[![JitPack](https://img.shields.io/jitpack/v/github/zixpo/candybar?color=4c1&label=JitPack&style=flat-square)](https://jitpack.io/#donnnno/candybar-foss)
 [![License](https://img.shields.io/github/license/zixpo/candybar?style=flat-square)](/LICENSE)
+
+An F-Droid compatible version of Candybar, easy to use.
+
+Original description below:
+
+<hr>
 
 Improved version of the original [CandyBar Dashboard](https://github.com/danimahardhika/candybar-library).
 
