@@ -12,7 +12,8 @@ Improved version of the original [CandyBar Dashboard](https://github.com/danimah
 
 Check out [Blueprint Dashboard](https://github.com/jahirfiquitiva/blueprint/). It's modular and uses new build features. You may like it :D
 
-This is the library of CandyBar Dashboard. It is only used for development purpose. Use the [sample implementation](https://github.com/zixpo/candybar-sample) for making icon packs.
+This is the library of CandyBar Dashboard. It is only used for development purpose. Use the [sample implementation](https://github.com/Donnnno/candybar-foss-sample/archive/main.zip) for making icon packs.
+
 
 <a href="https://play.google.com/store/apps/details?id=com.candybar.dev">
   <img height="80" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
