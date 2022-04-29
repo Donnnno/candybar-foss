@@ -40,6 +40,7 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.CreditsFragment;
 import candybar.lib.helpers.ConfigurationHelper;
 import candybar.lib.preferences.Preferences;
+import candybar.lib.utils.CandyBarGlideModule;
 
 /*
  * CandyBar - Material Dashboard
@@ -140,14 +141,16 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                     imageUri = "drawable://" + DrawableHelper.getResourceId(mContext, imageUri);
                 }
 
-                Glide.with(mContext)
-                        .load(imageUri)
-                        .transition(DrawableTransitionOptions.withCrossFade(300))
-                        .skipMemoryCache(true)
-                        .diskCacheStrategy(imageUri.contains("drawable://")
-                                ? DiskCacheStrategy.NONE
-                                : DiskCacheStrategy.RESOURCE)
-                        .into(headerViewHolder.image);
+                if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
+                    Glide.with(mContext)
+                            .load(imageUri)
+                            .transition(DrawableTransitionOptions.withCrossFade(300))
+                            .skipMemoryCache(true)
+                            .diskCacheStrategy(imageUri.contains("drawable://")
+                                    ? DiskCacheStrategy.NONE
+                                    : DiskCacheStrategy.RESOURCE)
+                            .into(headerViewHolder.image);
+                }
             }
 
             String profileUri = mContext.getResources().getString(R.string.about_profile_image);
@@ -155,13 +158,15 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 profileUri = "drawable://" + DrawableHelper.getResourceId(mContext, profileUri);
             }
 
-            Glide.with(mContext)
-                    .load(profileUri)
-                    .skipMemoryCache(true)
-                    .diskCacheStrategy(profileUri.contains("drawable://")
-                            ? DiskCacheStrategy.NONE
-                            : DiskCacheStrategy.RESOURCE)
-                    .into(headerViewHolder.profile);
+            if (CandyBarGlideModule.isValidContextForGlide(mContext)) {
+                Glide.with(mContext)
+                        .load(profileUri)
+                        .skipMemoryCache(true)
+                        .diskCacheStrategy(profileUri.contains("drawable://")
+                                ? DiskCacheStrategy.NONE
+                                : DiskCacheStrategy.RESOURCE)
+                        .into(headerViewHolder.profile);
+            }
         }
     }
 
