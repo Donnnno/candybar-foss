@@ -133,7 +133,7 @@ public class RequestHelper {
         return null;
     }
 
-    public static String buildJsonForArctic(@NonNull List<Request> requests) {
+    public static String buildJsonForPacific(@NonNull List<Request> requests) {
         StringBuilder sb = new StringBuilder();
         boolean isFirst = true;
 
@@ -178,51 +178,51 @@ public class RequestHelper {
         return sb.toString();
     }
 
-    public static String getRegularArcticApiKey(Context context) {
-        String arcticApiKey = context.getResources().getString(R.string.regular_request_arctic_api_key);
+    public static String getRegularPacificApiKey(Context context) {
+        String pacificApiKey = context.getResources().getString(R.string.regular_request_pacific_api_key);
         // Fallback to arctic_manager_api_key
-        if (arcticApiKey.length() == 0)
-            arcticApiKey = context.getResources().getString(R.string.arctic_manager_api_key);
+        if (pacificApiKey.length() == 0)
+            pacificApiKey = context.getResources().getString(R.string.arctic_manager_api_key);
 
-        return arcticApiKey;
+        return pacificApiKey;
     }
 
-    public static boolean isRegularArcticEnabled(Context context) {
+    public static boolean isRegularPacificEnabled(Context context) {
         return context.getResources().getString(R.string.regular_request_method).length() > 0
-                ? context.getResources().getString(R.string.regular_request_method).contentEquals("arctic")
-                // Use fallback method to check if arctic is enabled
-                : getRegularArcticApiKey(context).length() > 0;
+                ? context.getResources().getString(R.string.regular_request_method).contentEquals("pacific")
+                // Use fallback method to check if pacific is enabled
+                : getRegularPacificApiKey(context).length() > 0;
     }
 
-    public static String getPremiumArcticApiKey(Context context) {
-        String arcticApiKey = context.getResources().getString(R.string.premium_request_arctic_api_key);
+    public static String getPremiumPacificApiKey(Context context) {
+        String pacificApiKey = context.getResources().getString(R.string.premium_request_pacific_api_key);
         // Fallback to regular request's api key
-        if (arcticApiKey.length() == 0) arcticApiKey = getRegularArcticApiKey(context);
+        if (pacificApiKey.length() == 0) pacificApiKey = getRegularPacificApiKey(context);
 
-        return arcticApiKey;
+        return pacificApiKey;
     }
 
-    public static boolean isPremiumArcticEnabled(Context context) {
+    public static boolean isPremiumPacificEnabled(Context context) {
         return context.getResources().getString(R.string.premium_request_method).length() > 0
-                ? context.getResources().getString(R.string.premium_request_method).contentEquals("arctic")
+                ? context.getResources().getString(R.string.premium_request_method).contentEquals("pacific")
                 // Fallback to regular request's method
                 : context.getResources().getString(R.string.regular_request_method).length() > 0
-                ? context.getResources().getString(R.string.regular_request_method).contentEquals("arctic")
-                // Use fallback method to check if arctic is enabled
-                : getRegularArcticApiKey(context).length() > 0;
+                ? context.getResources().getString(R.string.regular_request_method).contentEquals("pacific")
+                // Use fallback method to check if pacific is enabled
+                : getRegularPacificApiKey(context).length() > 0;
     }
 
-    public static String sendArcticRequest(List<Request> requests, List<String> iconFiles, File directory, String apiKey) {
+    public static String sendPacificRequest(List<Request> requests, List<String> iconFiles, File directory, String apiKey) {
         okhttp3.RequestBody okRequestBody = new okhttp3.MultipartBody.Builder()
                 .setType(okhttp3.MultipartBody.FORM)
-                .addFormDataPart("apps", buildJsonForArctic(requests))
+                .addFormDataPart("apps", buildJsonForPacific(requests))
                 .addFormDataPart("archive", "icons.zip", okhttp3.RequestBody.create(
                         Objects.requireNonNull(getZipFile(iconFiles, directory.toString(), "icons.zip")),
                         okhttp3.MediaType.parse("application/zip")))
                 .build();
 
         okhttp3.Request okRequest = new okhttp3.Request.Builder()
-                .url("https://arcticmanager.com/v1/request")
+                .url("https://pacificmanager.app/v1/request")
                 .addHeader("TokenID", apiKey)
                 .addHeader("Accept", "application/json")
                 .addHeader("User-Agent", "afollestad/icon-request")
@@ -235,11 +235,14 @@ public class RequestHelper {
             okhttp3.Response response = okHttpClient.newCall(okRequest).execute();
             boolean success = response.code() > 199 && response.code() < 300;
             if (!success) {
-                JSONObject responseJson = new JSONObject(Objects.requireNonNull(response.body()).string());
+                return "Unknown error.";
+            }
+            JSONObject responseJson = new JSONObject(Objects.requireNonNull(response.body()).string());
+            if(responseJson.getString("status").equals("error")) {
                 return responseJson.getString("error");
             }
         } catch (IOException | JSONException ignoredException) {
-            LogUtil.d("ARCTIC_MANAGER: Error");
+            LogUtil.e("PACIFIC_MANAGER: Error");
             return "";
         }
         return null;

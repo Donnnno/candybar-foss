@@ -52,7 +52,7 @@ Just explore the wiki to get started.
 - Icon request
   - Regular request: Free to request 
   - ~~Premium request: Pay to request~~ 
-  - Support for [Arctic Request Manager](https://arcticmanager.com)
+  - Support for [Pacific Request Manager](https://pacificmanager.app)
   - Support for custom implementations (e.g. Firestore or AWS Lambda)
 - Cloud based wallpaper
   - Preview wallpaper
