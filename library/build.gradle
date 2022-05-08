@@ -79,13 +79,6 @@ android {
 }
 
 
-publishing {
-    singleVariant('release') {
-        withSourcesJar()
-        withJavadocJar()
-    }
-}
-
 dependencies {
     implementation project(':extLibs:PreLollipopTransitions')
 
