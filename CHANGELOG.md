@@ -1,3 +1,13 @@
+# v3.14.0
+- Updated Android Gradle Plugin
+- Rebuilds only current premium request
+- Ability to render layered drawables
+- Fixed an issue with the request fragment where the first missing app was not showing up when premium request was disabled (Thanks to [@moertel](https://github.com/moertel) for the research)
+- Updated dependencies
+- Now targets Android S (API 32)
+- Updated to work with Pacific Manager (Thanks to [@justinkruit](https://github.com/justinkruit))
+- Added support for custom icon request mode which you can configure programmatically using Java (Thanks to [@moertel](https://github.com/moertel))
+
 # v3.13.2
 - Updated Android Gradle Plugin
 - Analog clock is now resizable

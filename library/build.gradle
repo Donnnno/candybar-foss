@@ -21,12 +21,16 @@ buildscript {
         mavenCentral()
         maven { url 'https://jitpack.io' }
     }
+    dependencies {
+        classpath 'io.michaelrocks:paranoid-gradle-plugin:0.3.7'
+    }
 }
 
 plugins {
     id 'com.android.library'
     id 'maven-publish'
 }
+apply plugin: 'io.michaelrocks.paranoid'
 
 project.afterEvaluate {
     publishing {
@@ -58,6 +62,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+
         }
     }
 
