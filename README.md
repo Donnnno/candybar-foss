@@ -74,9 +74,11 @@ Just explore the wiki to get started.
 
 # Apps using Candybar FOSS
 
-|Arcticons|Snow|Popcons|
-|---|---|---|
-<a href="https://github.com/Donnnno/Arcticons"><img height="60" alt="Arcticons" src="https://github.com/Donnnno/Arcticons/blob/main/app/src/dark/play/listings/en-US/graphics/icon/ic_launcher_round.png"></a>|<a href="https://github.com/baitmooth/snow"><img height="80" alt="Snow" src="https://github.com/baitmooth/snow/blob/main/fastlane/metadata/android/en-US/images/icon.png"></a>|<a href="https://github.com/Wil-Design/Popcons/"><img height="60" alt="Snow" src="https://raw.githubusercontent.com/Wil-Design/Popcons/main/githubmedia/app-icon.png"></a>
+|Arcticons|Snow|Popcons|Papirus|
+|---|---|---|---|
+<a href="https://github.com/Donnnno/Arcticons"><img height="60" alt="Arcticons" src="https://github.com/Donnnno/Arcticons/blob/main/app/src/dark/play/listings/en-US/graphics/icon/ic_launcher_round.png"></a>|<a href="https://github.com/baitmooth/snow"><img height="80" alt="Snow" src="https://github.com/baitmooth/snow/blob/main/fastlane/metadata/android/en-US/images/icon.png"></a>|<a href="https://github.com/Wil-Design/Popcons/"><img height="60" alt="Snow" src="https://raw.githubusercontent.com/Wil-Design/Popcons/main/githubmedia/app-icon.png"></a>|<a href="https://github.com/PapirusDevelopmentTeam/papirus_icons"><img height="70" alt="Snow" src="https://github.com/PapirusDevelopmentTeam/papirus_icons/blob/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"></a>
+
+
 
 # What's new?
 Check out the [changelog](/CHANGELOG.md) to find out what's new.
