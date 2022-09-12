@@ -419,11 +419,11 @@ public class LauncherHelper {
                 break;
             case NEO:
                 try {
-                    Intent omega = new Intent(Intent.ACTION_MAIN);
-                    omega.setComponent(new ComponentName("com.saggitt.omega", "com.saggitt.omega.preferences.views.PreferencesActivity"));
+                    Intent neo = new Intent(Intent.ACTION_MAIN);
+                    neo.setComponent(new ComponentName("com.saggitt.omega", "com.saggitt.omega.preferences.views.PreferencesActivity"));
                     //omega.putExtra("theme.ThemeManager", context.getPackageName());
-                    omega.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(omega);
+                    neo.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(neo);
                     ((AppCompatActivity) context).finish();
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
