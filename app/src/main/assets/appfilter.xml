@@ -386,6 +386,9 @@
     <item
         component="ComponentInfo{com.coloros.soundrecorder/oppo.multimedia.soundrecorder.RecorderActivity}"
         drawable="recorder" />
+    <item
+        component="ComponentInfo{com.android.soundrecorder/com.sprd.soundrecorder.RecorderActivity}"
+        drawable="recorder" />
 
     <!-- Google Plus -->
     <item
