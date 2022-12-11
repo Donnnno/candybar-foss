@@ -28,6 +28,7 @@ import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.adapters.IconsAdapter;
 import candybar.lib.databases.Database;
 import candybar.lib.items.Icon;
+import me.zhanghai.android.fastscroll.FastScrollerBuilder;
 
 import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
@@ -110,8 +111,17 @@ public class IconsFragment extends Fragment {
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),
                 requireActivity().getResources().getInteger(R.integer.icons_column_count)));
 
-        setFastScrollColor(mFastScroll);
-        mFastScroll.attachRecyclerView(mRecyclerView);
+        new FastScrollerBuilder(mRecyclerView)
+                .useMd2Style()
+                .setPopupTextProvider(position -> {
+                    Icon icon = mIcons.get(position);
+                    String name = icon.getTitle();
+                    if ((icon.getCustomName() != null) && (!icon.getCustomName().contentEquals(""))) {
+                        name = icon.getCustomName();
+                    }
+                    return name.substring(0, 1);
+                })
+                .build();
 
         ((ImageView) mNoBookmarksFoundView.findViewById(R.id.bookmark_image))
                 .setImageDrawable(DrawableHelper.getTintedDrawable(requireActivity(), R.drawable.ic_bookmark,
