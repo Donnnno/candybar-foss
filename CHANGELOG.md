@@ -4,6 +4,7 @@
 - Fixed icon requests failing when using Gmail
 - Fixed keyboard not showing in search
 - Added better fast scroller in icons section
+- Pressing the clock should work again
 - Bump Min SDK to 21
 
 Thanks to [@moertel](//moertel), [@randomvector](//randomvector), [@one4studioicons](//one4studioicons)

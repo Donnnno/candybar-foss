@@ -15,6 +15,7 @@
         <item>Fixed icon requests failing when using Gmail</item>
         <item>Fixed keyboard not showing in search</item>
         <item>Added better fast scroller in icons section</item>
+        <item>Pressing the clock should work again</item>
         <item>Bump Min SDK to 21</item>
     </string-array>
 
