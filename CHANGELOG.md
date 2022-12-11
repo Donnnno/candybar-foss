@@ -1,3 +1,28 @@
+# v3.16.0
+- Updated AGP, dependencies and translations
+- Migrated to Billing Library v5.1
+- Fixed icon requests failing when using Gmail
+- Fixed keyboard not showing in search
+- Added better fast scroller in icons section
+- Bump Min SDK to 21
+
+Thanks to [@moertel](//moertel), [@randomvector](//randomvector), [@one4studioicons](//one4studioicons)
+for helping with the issues.
+
+# v3.15.0
+- Targets Android 13
+- Updated Android Gradle Plugin and Gradle
+- Updated translations
+- Fixed icons not rendering in the request section
+
+# v3.14.2
+- Fixed wrong icon getting selected in icon requests
+- Updated translations
+
+# v3.14.1
+- Fixed icon request taking forever to build.
+- Updated translations.
+
 # v3.14.0
 - Updated Android Gradle Plugin
 - Rebuilds only current premium request
