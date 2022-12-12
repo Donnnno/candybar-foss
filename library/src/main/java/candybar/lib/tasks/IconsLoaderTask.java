@@ -64,10 +64,7 @@ public class IconsLoaderTask extends AsyncTaskBase {
                     for (int i = 0; i < CandyBarMainActivity.sSections.size(); i++) {
                         List<Icon> icons = CandyBarMainActivity.sSections.get(i).getIcons();
 
-                        if (mContext.get().getResources().getBoolean(R.bool.show_icon_name) ||
-                                mContext.get().getResources().getBoolean(R.bool.enable_icon_name_replacer)) {
-                            IconsHelper.computeTitles(mContext.get(), icons);
-                        }
+                        IconsHelper.computeTitles(mContext.get(), icons);
 
                         if (mContext.get().getResources().getBoolean(R.bool.enable_icons_sort) ||
                                 mContext.get().getResources().getBoolean(R.bool.enable_icon_name_replacer)) {
@@ -95,11 +92,6 @@ public class IconsLoaderTask extends AsyncTaskBase {
                 options.inJustDecodeBounds = true;
                 BitmapFactory.decodeResource(mContext.get().getResources(),
                         icon.getRes(), options);
-
-                if (!mContext.get().getResources().getBoolean(R.bool.show_icon_name)) {
-                    // It means the title of icon is not yet computed, so compute it
-                    IconsHelper.computeTitles(mContext.get(), Collections.singletonList(icon));
-                }
 
                 String iconDimension = "";
 

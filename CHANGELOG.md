@@ -1,3 +1,6 @@
+# v3.16.1
+- Fixed app crash when `show_icon_name` is set to `false`
+
 # v3.16.0
 - Updated AGP, dependencies and translations
 - Migrated to Billing Library v5.1
