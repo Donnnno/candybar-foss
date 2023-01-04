@@ -326,7 +326,7 @@
     <string name="appfilter_item"><![CDATA[<item component=\"ComponentInfo{{{component}}}\" drawable=\"{{drawable}}\" />]]></string>
     <bool name="quick_apply">true</bool>
     <bool name="show_random_icon">true</bool>
-    
+
     <!-- These are deprecated and replaced with other items. These are only here so that things don't break. -->
     <!-- TODO: Remove them in v3.10.0 -->
     <!-- TODO: Add default values to request options when removing these options -->
