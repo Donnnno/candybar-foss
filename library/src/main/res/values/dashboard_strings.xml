@@ -271,6 +271,9 @@
     <string name="theme_name_auto">Auto</string>
     <string name="theme_name_light">Light</string>
     <string name="theme_name_dark">Dark</string>
+    <string name="theme_name_materialdark">Material Dark</string>
+    <string name="theme_name_materiallight">Material Light</string>
+
 
     <!-- Permission -->
     <string name="permission_storage_denied">Storage permission needed to save wallpaper</string>

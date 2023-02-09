@@ -42,6 +42,7 @@ import com.danimahardhika.android.helpers.core.FileHelper;
 import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.danimahardhika.android.helpers.permission.PermissionCode;
+import com.google.android.material.color.DynamicColors;
 import com.google.android.material.navigation.NavigationView;
 
 import java.io.File;
@@ -72,14 +73,11 @@ import candybar.lib.helpers.IntentHelper;
 import candybar.lib.helpers.JsonHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.NavigationViewHelper;
-import candybar.lib.helpers.PlayStoreCheckHelper;
-import candybar.lib.helpers.RequestHelper;
 import candybar.lib.helpers.ThemeHelper;
 import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Home;
 import candybar.lib.items.Icon;
-import candybar.lib.items.InAppBilling;
 import candybar.lib.items.Request;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
@@ -134,6 +132,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     public static int sIconsCount;
 
     private ActivityConfiguration mConfig;
+
 
     @NonNull
     public abstract ActivityConfiguration onInit();

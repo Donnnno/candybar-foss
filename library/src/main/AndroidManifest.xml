@@ -60,7 +60,7 @@
             android:name="candybar.lib.activities.CandyBarCrashReport"
             android:launchMode="singleInstance"
             android:noHistory="true"
-            android:theme="@style/Theme.MaterialComponents.Light.Dialog" />
+            android:theme="@style/Theme.Material3.Light.Dialog" />
 
         <activity
             android:name="candybar.lib.activities.CandyBarWallpaperActivity"

@@ -54,13 +54,9 @@
     <bool name="enable_non_mail_app_request">true</bool>
     <bool name="hide_missing_app_count">false</bool>
     <string name="regular_request_method">email</string>
-    <string name="premium_request_method"></string>
     <string name="regular_request_email">sarsamurmu05@gmail.com</string>
-    <string name="premium_request_email"></string>
     <string name="regular_request_email_subject"></string>
-    <string name="premium_request_email_subject"></string>
     <string name="regular_request_arctic_api_key"><!--f2a96282-31d0-42b7-b802-5487f2931113--></string>
-    <string name="premium_request_arctic_api_key"></string>
 
     <!-- CONFIG: CLOUD WALLPAPERS -->
     <string name="wallpaper_json">https://zixpo.github.io/candybar-sources/walls_alt.json</string>
@@ -95,7 +91,6 @@
     <bool name="enable_donation">true</bool>
 
     <!-- CONFIG: MISC -->
-    <bool name="playstore_check_enabled">false</bool>
     <string name="config_json">https://zixpo.github.io/candybar-sources/candybar_config_alt.json</string>
     <bool name="show_intro">false</bool>
 

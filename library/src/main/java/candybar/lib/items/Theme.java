@@ -9,7 +9,9 @@ import candybar.lib.R;
 public enum Theme {
     AUTO(R.string.theme_name_auto),
     LIGHT(R.string.theme_name_light),
-    DARK(R.string.theme_name_dark);
+    DARK(R.string.theme_name_dark),
+    MaterialDark(R.string.theme_name_materialdark),
+    MaterialLight(R.string.theme_name_materiallight);
 
     private final int nameStringRes;
 
