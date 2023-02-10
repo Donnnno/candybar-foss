@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.multidex.MultiDexApplication;
 
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.google.android.material.color.DynamicColors;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -67,6 +68,8 @@ public abstract class CandyBarApplication extends MultiDexApplication {
         // Enable or disable logging
         LogUtil.setLoggingTag(getString(R.string.app_name));
         LogUtil.setLoggingEnabled(true);
+
+        DynamicColors.applyToActivitiesIfAvailable(this);
 
         mConfiguration = onInit();
 
