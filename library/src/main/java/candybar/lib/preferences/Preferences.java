@@ -9,6 +9,7 @@ import android.net.NetworkInfo;
 import androidx.annotation.NonNull;
 
 import java.lang.ref.WeakReference;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -152,6 +153,14 @@ public class Preferences {
     }
 
     public void setTheme(Theme theme) {
+        CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
+                "click",
+                new HashMap<String, Object>() {{
+                    put("section", "settings");
+                    put("action", "change_theme");
+                    put("theme", theme.name());
+                }}
+        );
         getSharedPreferences().edit().putInt(KEY_THEME, theme.ordinal()).apply();
     }
 
