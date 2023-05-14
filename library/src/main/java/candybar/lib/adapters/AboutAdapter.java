@@ -40,6 +40,7 @@ import candybar.lib.BuildConfig;
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.CreditsFragment;
+import candybar.lib.fragments.dialog.LicensesFragment;
 import candybar.lib.helpers.ConfigurationHelper;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.CandyBarGlideModule;

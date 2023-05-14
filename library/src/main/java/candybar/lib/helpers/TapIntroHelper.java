@@ -255,7 +255,6 @@ public class TapIntroHelper {
             new Handler().postDelayed(() -> {
                 try {
                     int titleColor = ContextCompat.getColor(context, R.color.tapIntroTitle);
-                    int secondary = ColorHelper.setColorAlpha(primary, 0.7f);
                     int descriptionColor = ContextCompat.getColor(context, R.color.tapIntroDescription);
                     int circleColorInner = ContextCompat.getColor(context, R.color.tapIntroCircleInner);
                     int circleColorOuter = ContextCompat.getColor(context, R.color.tapIntroCircleOuter);
@@ -342,11 +341,15 @@ public class TapIntroHelper {
                         TapTarget tapTarget = TapTarget.forView(fab,
                                 context.getResources().getString(R.string.tap_intro_request_send),
                                 context.getResources().getString(R.string.tap_intro_request_send_desc))
-                                .titleTextColorInt(primary)
-                                .descriptionTextColorInt(secondary)
-                                .targetCircleColorInt(primary)
+                                .titleTextColorInt(titleColor)
+                                .descriptionTextColorInt(descriptionColor)
+                                .targetCircleColorInt(circleColorInner)
                                 .tintTarget(false)
                                 .drawShadow(Preferences.get(context).isTapIntroShadowEnabled());
+
+                        if (circleColorOuter != 0) {
+                            tapTarget.outerCircleColorInt(circleColorOuter);
+                        }
 
                         if (title != null) {
                             tapTarget.textTypeface(title);
