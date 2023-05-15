@@ -27,9 +27,6 @@ import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetSequence;
 import com.getkeepsafe.taptargetview.TapTargetView;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import candybar.lib.R;
 import candybar.lib.adapters.HomeAdapter;
 import candybar.lib.preferences.Preferences;
@@ -568,8 +565,7 @@ public class TapIntroHelper {
                         descriptionColor = ColorHelper.setColorAlpha(primary, 0.7f);
                         circleColorInner = secondary;
                         circleColorOuter = ColorHelper.setColorAlpha(
-                                ColorHelper.getAttributeColor(context, R.attr.colorSecondary),
-                                0.7f
+                                ColorHelper.getAttributeColor(context, com.google.android.material.R.attr.colorSecondary),                                0.7f
                         );
                     }
 
