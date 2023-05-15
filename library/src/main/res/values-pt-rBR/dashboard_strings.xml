@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="splash_screen_title">CandyBar Material Dashboard</string>
+    <string name="splash_screen_title">Painel CandyBar Material</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Início</string>
     <string name="navigation_view_apply">Aplicar</string>
     <string name="navigation_view_icons">Ícones</string>
     <string name="navigation_view_request">Sugestão de Ícones</string>
     <string name="navigation_view_wallpapers">Papéis de Parede</string>
+    <string name="navigation_view_presets">Predefinições</string>
     <string name="navigation_view_settings">Configurações</string>
     <string name="navigation_view_faqs">Perguntas Frequentes</string>
     <string name="navigation_view_about">Sobre</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">Pesquisar</string>
     <string name="menu_save">Salvar no Dispositivo</string>
     <string name="menu_select_all">Selecionar Tudo</string>
+    <string name="menu_delete">Excluir</string>
     <string name="menu_wallpaper_crop">Cortar Papel de Parede</string>
     <string name="menu_apply_homescreen">Tela inicial</string>
     <string name="menu_apply_lockscreen">Tela de bloqueio</string>
@@ -40,7 +42,9 @@
     <string name="search_noresult">Nenhum resultado para \"%s\"</string>
     <string name="search_faqs">Pergunta ou resposta</string>
     <string name="search_icon">Nome do ícone</string>
+    <string name="search_wallpapers">Nome do papel de parede</string>
     <!-- Update -->
+    <string name="checking_for_update">Verificando atualizações…</string>
     <string name="update_available">Atualização disponível!</string>
     <string name="no_update_available">Você está usando a versão mais recente!</string>
     <!-- Changelog -->
@@ -56,6 +60,9 @@
     <string name="license_check_retry">Não foi possível verificar a licença, por favor tente novamente em alguns instantes.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Verificação da Play Store</string>
+    <string name="playstore_check_success">Obrigado por instalar o App pela Google Play Store. Aproveite.</string>
+    <string name="playstore_check_failed">Parece que você instalou este pacote de ícones fora da Google Play Store.
+        Você não será capaz de usá-lo.</string>
     <!-- Share -->
     <string name="share_app_title">Ei! Confira %s</string>
     <string name="share_app_body">Confira %1$s, este pacote de ícones é muito legal! %2$s</string>
@@ -103,6 +110,15 @@
     <string name="apply_supported">Lançadores Suportados</string>
     <string name="apply_manual">%1$s Lançador não suporta a aplicação direta, mas você pode aplicar %2$s manualmente a partir das configurações do lançador.</string>
     <string name="apply_manual_evie">Toque e segure na tela inicial - Configurações - Pacote de ícones - escolha %s.</string>
+    <string name="apply_manual_samsung_oneui">%1$s não suporta aplicação direta, mas começando com %2$s você pode aplicar ícones com um aplicativo complementar.</string>
+    <string name="apply_manual_samsung_oneui_too_old">Sua versão atual do %s é muito antiga. Por favor, atualize para o Android 12 ou mais recente para poder aplicar ícones diretamente. Como alternativa, você pode instalar um lançador diferente.</string>
+    <string name="apply_manual_samsung_oneui_step_1">Abrir %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">Baixe o aplicativo %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">Toque em \"Ícone\"</string>
+    <string name="apply_manual_samsung_oneui_step_4">Toque em \"Criar Novo\"</string>
+    <string name="apply_manual_samsung_oneui_step_5">Toque no botão azul \"Iconpack\"</string>
+    <string name="apply_manual_samsung_oneui_step_6">Escolha %s da lista</string>
+    <string name="apply_manual_samsung_oneui_step_7">Repita esses passos cada vez que você atualizar %s, pois novos ícones não serão mapeados automaticamente.</string>
     <string name="apply_launch_failed">Não foi possível iniciar as configurações %s</string>
     <string name="apply_launcher_not_installed">%s Launcher não está instalado. Você quer abrir
         Google Play Store para baixá-lo e instalá-lo?</string>
@@ -117,15 +133,20 @@
     <!-- Icons -->
     <string name="icons_load_failed">Não foi possível carregar os ícones</string>
     <string name="icon_shape">Formato dos ícones</string>
+    <string name="bookmark_icons_empty">Nenhum marcador encontrado. Marque ícones para acessá-los rapidamente aqui.</string>
+    <string name="items_selected">%d selecionado</string>
     <!-- Request -->
     <string name="request_title">Sugestão de Ícones</string>
     <string name="request_not_selected">Selecione apps para solicitar</string>
     <string name="request_not_requested">Não solicitado</string>
     <string name="request_already_requested">Já solicitado</string>
     <string name="request_building">Criando solicitação …</string>
-    <string name="request_arctic_sending">Enviando solicitação para Arctic Manager...</string>
-    <string name="request_arctic_error">Ocorreu um erro ao enviar a solicitação para o Arctic Manager. Erro é %s</string>
-    <string name="request_arctic_success">Pedido enviado com sucesso para Arctic Manager</string>
+    <string name="request_pacific_sending">Enviando solicitação para Pacific Manager...</string>
+    <string name="request_pacific_error">Ocorreu um erro ao enviar a solicitação para o Pacific Manager. Erro é %s</string>
+    <string name="request_pacific_success">Pedido enviado com sucesso para Pacific Manager</string>
+    <string name="request_custom_error">Ocorreu um erro ao enviar a solicitação de ícone. Se este erro persistir, entre em contato com o desenvolvedor. %s</string>
+    <string name="request_custom_success">Solicitação de ícone enviada com sucesso</string>
+    <string name="request_fetching_data">Buscando dados mais recentes…</string>
     <string name="request_build_failed">Não foi possível criar a solicitação do ícone</string>
     <string name="request_appfilter_failed">Não foi possível ler appfilter.xml</string>
     <string name="request_requested">Por favor, verifique seu pedido novamente.
@@ -133,6 +154,7 @@
     <string name="request_email_client">Escolha o aplicativo que você deseja usar para enviar a solicitação de ícone</string>
     <string name="request_app_disabled">Você está usando uma versão antiga deste pacote de ícones. Os ícones solicitados podem ser incluídos na versão mais recente. Por favor, atualize seu aplicativo para a versão mais recente para solicitar ícones.</string>
     <string name="connection_error_long">Não foi possível carregar dados do servidor. Por favor, verifique sua conexão de rede.</string>
+    <string name="unable_to_load_config">Ocorreu um erro durante a recuperação de dados do servidor.</string>
     <string name="request_limit">Você só pode fazer %d pedido(s) com solicitação regular.</string>
     <string name="request_used">Você solicitou %d ícone(s).</string>
     <string name="request_limit_buy">Você pode comprar pedidos Premium para solicitar mais ícones.</string>
@@ -176,6 +198,10 @@
     <string name="connection_failed">Não foi possível buscar dados do servidor</string>
     <string name="wallpaper_apply">Aplicar o papel de parede</string>
     <string name="wallpaper_save_to_device">Salvar o papel de parede</string>
+    <!-- Presets -->
+    <string name="presets_load_failed">Não foi possível carregar as predefinições</string>
+    <string name="presets_storage_permission">Permissão de armazenamento é necessária para carregar a pré-visualização do papel de parede</string>
+    <string name="presets_required_apps">Aplicativos necessários para usar essas predefinições</string>
     <!-- Preferences -->
     <string name="pref_data_header">Dados &amp; Cache</string>
     <string name="pref_data_cache">Limpar Cache</string>
@@ -208,6 +234,9 @@
     <string name="pref_others_reset_tutorial">Reiniciar Tutorial</string>
     <string name="pref_others_reset_tutorial_reset">Tutorial Reinicializado</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Automático</string>
+    <string name="theme_name_light">Claro</string>
+    <string name="theme_name_dark">Escuro</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Permissão de armazenamento necessária para salvar o papel de parede</string>
     <!-- Intent -->
@@ -247,4 +276,6 @@
     <string name="txt_open">Abrir</string>
     <string name="txt_close">Fechar</string>
     <string name="txt_new">Novo</string>
+    <!-- Content descriptions for screen readers -->
+    <string name="share_icon_pack_button_content_description">Compartilhe este app com alguém</string>
 </resources>

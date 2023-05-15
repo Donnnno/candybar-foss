@@ -7,6 +7,7 @@
     <string name="navigation_view_icons">Icônes</string>
     <string name="navigation_view_request">Demande d\'icône(s)</string>
     <string name="navigation_view_wallpapers">Fonds d\'écran</string>
+    <string name="navigation_view_presets">Modèles</string>
     <string name="navigation_view_settings">Paramètres</string>
     <string name="navigation_view_faqs">FAQ</string>
     <string name="navigation_view_about">À propos</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">Recherche</string>
     <string name="menu_save">Enregistrer sur l\'appareil</string>
     <string name="menu_select_all">Tout sélectionner</string>
+    <string name="menu_delete">Supprimer</string>
     <string name="menu_wallpaper_crop">Rogner le fond d\'écran</string>
     <string name="menu_apply_homescreen">Ecran d\'accueil</string>
     <string name="menu_apply_lockscreen">Ecran de verrouillage</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">Aucun résultat pour \"%s\"</string>
     <string name="search_faqs">Question ou réponse</string>
     <string name="search_icon">Nom d\'icône</string>
+    <string name="search_wallpapers">Nom du fond d\'écran</string>
     <!-- Update -->
     <string name="checking_for_update">Vérification de mise à jour...</string>
     <string name="update_available">Mise à jour disponible !</string>
@@ -107,6 +110,15 @@ Avec la demande d\'icône(s) premium, vous pouvez obtenir vos applications deman
     <string name="apply_supported">Launchers supportés</string>
     <string name="apply_manual">%1$s ne supporte pas l\'application directe, vous pouvez appliquer %2$s manuellement depuis les paramètres du launcher.</string>
     <string name="apply_manual_evie">Appuyez ici et maintenez sur l\'écran d\'accueil &gt; Paramètres &gt; Pack d\'icônes &gt; Choisir %s.</string>
+    <string name="apply_manual_samsung_oneui">%1$s ne prend pas en charge l\'application directe, mais en commençant par %2$s , vous pouvez appliquer des icônes avec une application complémentaire.</string>
+    <string name="apply_manual_samsung_oneui_too_old">Votre version actuelle de %s est trop ancienne. Veuillez mettre à jour vers Android 12 ou plus récent pour pouvoir appliquer les icônes directement. Vous pouvez également installer un lanceur différent.</string>
+    <string name="apply_manual_samsung_oneui_step_1">Ouvrir %s</string>
+    <string name="apply_manual_samsung_oneui_step_2">Télécharger l\'application %s</string>
+    <string name="apply_manual_samsung_oneui_step_3">Tapez sur \"Icône\"</string>
+    <string name="apply_manual_samsung_oneui_step_4">Tapez sur \"Créer nouveau\"</string>
+    <string name="apply_manual_samsung_oneui_step_5">Tapez sur le bouton bleu \"Pack d\'icônes\"</string>
+    <string name="apply_manual_samsung_oneui_step_6">Choisissez %s depuis la liste</string>
+    <string name="apply_manual_samsung_oneui_step_7">Répétez ces étapes à chaque fois que vous mettez à jour %s, car les nouvelles icônes ne seront pas appliquées automatiquement.</string>
     <string name="apply_launch_failed">Impossible d\'accéder aux paramètres de %s</string>
     <string name="apply_launcher_not_installed">%s n\'est pas installé. 
 Voulez-vous l\'ouvrir sur le Google Play Store pour le télécharger et l\'installer ?</string>
@@ -122,15 +134,19 @@ Vous avez besoin d\'un lanceur tiers pour utiliser un pack d\'icônes.</string>
     <!-- Icons -->
     <string name="icons_load_failed">Impossible de charger les icônes</string>
     <string name="icon_shape">Forme des icônes</string>
+    <string name="bookmark_icons_empty">Aucun favori trouvé. Mettez en favori des icônes pour les consulter rapidement ici.</string>
+    <string name="items_selected">%d sélectionnés</string>
     <!-- Request -->
     <string name="request_title">Demande d\'icône(s)</string>
     <string name="request_not_selected">Sélectionnez les applications à demander</string>
     <string name="request_not_requested">Non demandée</string>
     <string name="request_already_requested">Déjà demandée</string>
     <string name="request_building">Construction de la demande …</string>
-    <string name="request_arctic_sending">Envoi de la demande à Artic Manager...</string>
-    <string name="request_arctic_error">Échec de l\'envoi de la demande à Artic Manager. L\'erreur est %s</string>
-    <string name="request_arctic_success">Demande envoyée avec succès à Artic Manager</string>
+    <string name="request_pacific_sending">Envoi de la demande à Pacific Manager...</string>
+    <string name="request_pacific_error">Échec de l\'envoi de la demande à Pacific Manager. L\'erreur est %s</string>
+    <string name="request_pacific_success">Demande envoyée avec succès à Pacific Manager</string>
+    <string name="request_custom_error">Une erreur s\'est produite lors de l\'envoi de la demande d\'icône. Si cette erreur persiste, contactez le développeur. %s</string>
+    <string name="request_custom_success">Demande d\'icône(s) envoyée avec succès</string>
     <string name="request_fetching_data">Récupération des dernières données...</string>
     <string name="request_build_failed">Impossible de construire la demande d\'icône(s)</string>
     <string name="request_appfilter_failed">Impossible de lire le fichier appfilter.xml</string>
@@ -185,6 +201,11 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="connection_failed">Impossible d\'obtenir des informations du serveur</string>
     <string name="wallpaper_apply">Appliquer le fond d\'écran</string>
     <string name="wallpaper_save_to_device">Enregistrer le fond d\'écran</string>
+    <!-- Presets -->
+    <string name="presets_load_failed">Impossible de charger les modèles</string>
+    <string name="presets_storage_permission">La permission Espace de stockage est requise pour charger la prévisualation du fond d\'écran</string>
+    <string name="presets_required_apps">Des applications sont requises pour utiliser ces modèles</string>
+    <string name="presets_required_apps_not_installed">Les applications requises pour utiliser le modèle ne sont pas installées. Veuillez les installer et essayez à nouveau.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Données et Cache</string>
     <string name="pref_data_cache">Effacer le cache</string>
@@ -212,7 +233,7 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="pref_others_header">Autres</string>
     <string name="pref_others_report_bugs">Rapport d\'erreurs</string>
     <string name="pref_others_changelog">Journal des Modifications</string>
-    <string name="pref_others_reset_tutorial">Réinitialiser le didactitciel</string>
+    <string name="pref_others_reset_tutorial">Réinitialiser le didacticiel</string>
     <string name="pref_others_reset_tutorial_reset">Didacticiel réinitialisé</string>
     <!-- Themes -->
     <string name="theme_name_auto">Auto</string>
@@ -256,4 +277,12 @@ Ouvrez les Paramètres et choisissez \"Restaurer les achats\" pour le restaurer.
     <string name="txt_open">Ouvrir</string>
     <string name="txt_close">Fermer</string>
     <string name="txt_new">Nouveau</string>
+    <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Ajouter cette icône à la section des favoris</string>
+    <string name="icon_search_close_button_content_description">Fermer la recherche d\'icône</string>
+    <string name="icon_request_submit_button_content_description">Soumettre une demande d\'icône</string>
+    <string name="icon_list_content_description">La liste des icônes incluses dans le pack d\'icônes</string>
+    <string name="icon_search_list_content_description">La liste des icônes qui correspondent au terme recherché</string>
+    <string name="about_item_social_content_description">Un lien vers un profil en ligne de l\'auteur du pack d\'icônes : </string>
+    <string name="share_icon_pack_button_content_description">Partager cette application avec une connaissance</string>
 </resources>

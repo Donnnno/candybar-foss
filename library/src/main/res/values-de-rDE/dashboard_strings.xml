@@ -4,9 +4,10 @@
     <!-- Navigation View -->
     <string name="navigation_view_home">Startseite</string>
     <string name="navigation_view_apply">Anwenden</string>
-    <string name="navigation_view_icons">Symbole</string>
+    <string name="navigation_view_icons">Icons</string>
     <string name="navigation_view_request">Icon-Anfrage</string>
     <string name="navigation_view_wallpapers">Hintergrundbilder</string>
+    <string name="navigation_view_presets">Voreinstellungen</string>
     <string name="navigation_view_settings">Einstellungen</string>
     <string name="navigation_view_faqs">FAQs</string>
     <string name="navigation_view_about">Über</string>
@@ -25,6 +26,7 @@
     <string name="menu_search">Suchen</string>
     <string name="menu_save">Auf Gerät speichern</string>
     <string name="menu_select_all">Alles auswählen</string>
+    <string name="menu_delete">Löschen</string>
     <string name="menu_wallpaper_crop">Hintergrundbild zuschneiden</string>
     <string name="menu_apply_homescreen">Startbildschirm</string>
     <string name="menu_apply_lockscreen">Sperrbildschirm</string>
@@ -40,6 +42,7 @@
     <string name="search_noresult">Keine Ergebnisse für \"%s\" gefunden</string>
     <string name="search_faqs">Frage oder Antwort</string>
     <string name="search_icon">Icon-Name</string>
+    <string name="search_wallpapers">Wallpaper-Name</string>
     <!-- Update -->
     <string name="checking_for_update">Suche nach Updates…</string>
     <string name="update_available">Aktualisierung verfügbar!</string>
@@ -121,15 +124,19 @@ Google Play Store öffnen, um es herunterzuladen und es zu installieren?</string
     <!-- Icons -->
     <string name="icons_load_failed">Icons können nicht geladen werden</string>
     <string name="icon_shape">Symbolform</string>
+    <string name="bookmark_icons_empty">Keine Lesezeichen gefunden. Markiere Icons für schnellen Zugriff.</string>
+    <string name="items_selected">%d ausgewählt</string>
     <!-- Request -->
     <string name="request_title">Icon-Anfrage</string>
     <string name="request_not_selected">Wähle Apps aus, um eine Anfrage zu senden</string>
     <string name="request_not_requested">Nicht angefragt</string>
     <string name="request_already_requested">Bereits angefragt</string>
     <string name="request_building">Anfrage erstellen …</string>
-    <string name="request_arctic_sending">Sende Request an Arctic Manager...</string>
-    <string name="request_arctic_error">Fehler beim Senden des Requests an Arctic Manager. Die Fehlermeldung ist %s</string>
-    <string name="request_arctic_success">Request erfolgreich an Arctic Manager gesendet</string>
+    <string name="request_pacific_sending">Sende Request an Pacific Manager...</string>
+    <string name="request_pacific_error">Fehler beim Senden des Requests an Pacific Manager. Die Fehlermeldung ist %s</string>
+    <string name="request_pacific_success">Request erfolgreich an Pacific Manager gesendet</string>
+    <string name="request_custom_error">Fehler beim Senden des Icon Requests. Falls der Fehler wiederholt auftritt, wende dich an den Entwickler. %s</string>
+    <string name="request_custom_success">Icon Request erfolgreich gesendet</string>
     <string name="request_fetching_data">Rufe neueste Daten ab…</string>
     <string name="request_build_failed">Icon-Anfrage kann nicht erstellt werden</string>
     <string name="request_appfilter_failed">appfilter.xml kann nicht gelesen werden</string>
@@ -182,6 +189,9 @@ Einstellungen öffnen, wähle \"Käufe wiederherstellen\", um es wieder zu bekom
     <string name="connection_failed">Daten können nicht vom Server geholt werden</string>
     <string name="wallpaper_apply">Hintergrundbild anwenden</string>
     <string name="wallpaper_save_to_device">Hintergrundbild speichern</string>
+    <!-- Presets -->
+    <string name="presets_load_failed">Voreinstellung konnte nicht geladen werden</string>
+    <string name="presets_storage_permission">Speicher-Berechtigung wird benötigt, um die Wallpaper-Vorschau zu laden</string>
     <!-- Preferences -->
     <string name="pref_data_header">Daten &amp; Cache</string>
     <string name="pref_data_cache">Cache löschen</string>
@@ -214,6 +224,9 @@ fehlenden Icons erstellt wurde.</string>
     <string name="pref_others_reset_tutorial">Tutorial zurücksetzen</string>
     <string name="pref_others_reset_tutorial_reset">Tutorial zurückgesetzt</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Automatisch</string>
+    <string name="theme_name_light">Hell</string>
+    <string name="theme_name_dark">Dunkel</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Zugang zum Speicher nötig, um das Hintergrundbild zu speichern</string>
     <!-- Intent -->
@@ -253,4 +266,12 @@ Für Android bei GitHub verfügbar und kostenlos zur Benutzung freigegeben, entw
     <string name="txt_open">Öffnen</string>
     <string name="txt_close">Schließen</string>
     <string name="txt_new">Neu</string>
+    <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Fügen Sie dieses Icon zu den Lesezeichen hinzu</string>
+    <string name="icon_search_close_button_content_description">Iconsuche schließen</string>
+    <string name="icon_request_submit_button_content_description">Eine Icon-Anfrage senden</string>
+    <string name="icon_list_content_description">Die Liste der Icons, die im Icon-Pack enthalten sind</string>
+    <string name="icon_search_list_content_description">Die Liste der Icons, die mit dem Suchbegriff übereinstimmen</string>
+    <string name="about_item_social_content_description">Ein Link zu einem Online-Profil des Autors des Icon-Packs: </string>
+    <string name="share_icon_pack_button_content_description">Teile diese App mit anderen</string>
 </resources>

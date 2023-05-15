@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">Панель CandyBar Material</string>
     <!-- Navigation View -->
     <string name="navigation_view_home">Главная</string>
     <string name="navigation_view_apply">Применить</string>
     <string name="navigation_view_icons">Иконки</string>
     <string name="navigation_view_request">Запрос иконок</string>
     <string name="navigation_view_wallpapers">Обои</string>
+    <string name="navigation_view_presets">Шаблоны</string>
     <string name="navigation_view_settings">Настройки</string>
     <string name="navigation_view_faqs">ЧаВо</string>
     <string name="navigation_view_about">О проекте</string>
@@ -24,6 +26,7 @@
     <string name="menu_search">Поиск</string>
     <string name="menu_save">Сохранить на устройство</string>
     <string name="menu_select_all">Выделить всё</string>
+    <string name="menu_delete">Удалить</string>
     <string name="menu_wallpaper_crop">Обрезать обои</string>
     <string name="menu_apply_homescreen">Домашний экран</string>
     <string name="menu_apply_lockscreen">Экран блокировки</string>
@@ -39,7 +42,9 @@
     <string name="search_noresult">Ничего не найдено по запросу \"%s\"</string>
     <string name="search_faqs">Вопрос или ответ</string>
     <string name="search_icon">Имя Иконки</string>
+    <string name="search_wallpapers">Название обоев</string>
     <!-- Update -->
+    <string name="checking_for_update">Проверка обновлений …</string>
     <string name="update_available">Доступно обновление!</string>
     <string name="no_update_available">Вы используете последнюю версию!</string>
     <!-- Changelog -->
@@ -55,6 +60,8 @@
     <string name="license_check_retry">Не удалось проверить лицензию, please try again in a few moments.</string>
     <!-- Play Store Installation Check -->
     <string name="playstore_check">Проверьте Плей маркет</string>
+    <string name="playstore_check_success">Спасибо за установку приложения с Play Store. Наслаждайтесь.</string>
+    <string name="playstore_check_failed">Похоже, вы установили этот пакет иконок не из Google Play Store. Вы не сможете им пользоваться.</string>
     <!-- Share -->
     <string name="share_app_title">Ёу! Зацени %s</string>
     <string name="share_app_body">Зацени %1$s, это набор иконок на самом деле крутой! %2$s</string>
@@ -99,40 +106,62 @@
     <!-- Apply -->
     <string name="apply_installed">Установленный лаунчер</string>
     <string name="apply_supported">Поддерживаемые лаунчеры</string>
+    <string name="apply_manual">Ничего не выйдет! В %1$s Launcher применить %2$s можно только ручками.</string>
     <string name="apply_manual_evie">Нажмите и удерживайте кнопку на рабочем столе - параметры - набор значков - выберите %s.</string>
     <string name="apply_launch_failed">Не удалось запустить %s настройки</string>
     <string name="apply_launcher_not_installed">%s не установлен. Вы хотите открыть 
 Магазин Google Play, чтобы загрузить и установить его?</string>
+    <string name="apply_launcher_not_installable">%s Launcher не установлен. Пожалуйста, повторите попытку после установки лаунчера.</string>
     <string name="apply_cmtheme_not_available">CM Theme Manager не поддерживается на этом устройстве</string>
     <string name="apply_cmtheme_failed">Не удалось запустить CM Theme Manager, Вы можете попробовать применить значок обновления вручную из настроек.</string>
     <string name="apply_lg_home">Чтобы применить этот пакет значков откройте настройки - Дисплей - главный экран - Тема</string>
     <string name="apply_lg_home_not_available">LG Home не доступен на этом устройстве</string>
     <string name="apply_lg_home_failed">Не удалось запустить настройки LG Home, Вы можете попробовать применить значок вручную в настройках.</string>
     <string name="apply_lg_home_nougat">LG Home с андроид 7.0+ больше не поддерживает набор значков. Вам нужен настраиваемый лаунчер для использования значков.</string>
+    <string name="apply_launcher_incompatible">%s Launcher по каким-то непонятным причинам не поддерживает наш пакет. Конечно ты можешь скачать другой пакет для %2$s launcher. Но лучше скачай другой launcher который есть в списке.</string>
     <!-- Icons -->
     <string name="icons_load_failed">Не удалось загрузить иконки</string>
+    <string name="icon_shape">Форма значка</string>
+    <string name="bookmark_icons_empty">Закладки не найдены. Вы можете добавлять иконки в закладки для быстрого доступа к ним.</string>
+    <string name="items_selected">%d выбран</string>
     <!-- Request -->
     <string name="request_title">Запрос иконок</string>
     <string name="request_not_selected">Выберите приложения</string>
     <string name="request_not_requested">Не запрошено</string>
     <string name="request_already_requested">Уже запрошено</string>
     <string name="request_building">Сборка запроса …</string>
+    <string name="request_pacific_sending">Отправка запроса в Pacific Manager...</string>
+    <string name="request_pacific_error">Произошла ошибка при отправке запроса в Pacific Manager. Ошибка: %s</string>
+    <string name="request_pacific_success">Запрос успешно отправлен в Pacific Manager</string>
+    <string name="request_custom_error">Произошла ошибка при отправке запроса иконки. Если эта ошибка повторится, обратитесь к разработчику. %s</string>
+    <string name="request_custom_success">Запрос иконки успешно отправлен</string>
+    <string name="request_fetching_data">Получение последних данных …</string>
     <string name="request_build_failed">Не удалось собрать запрос</string>
     <string name="request_appfilter_failed">Не удалось считать appfilter.xml</string>
     <string name="request_requested">Пожалуйста, проверьте еще раз ваш запрос. 
 Потому что вы пытаетесь запросить приложение, которое уже было предложено.</string>
     <string name="request_email_client">Выберите клиент электронной почты для отправки запроса</string>
     <string name="request_app_disabled">Вы используете старую версию этого пакета иконок.  Запрос иконок работает только в последней версии.  Пожалуйста, обновите ваше приложение до последней версии. Либо они временно отключены.</string>
+    <string name="connection_error_long">Не удается загрузить данные с сервера. Пожалуйста, проверьте подключение к сети.</string>
+    <string name="unable_to_load_config">Произошла ошибка при выборке/чтении данных с сервера.</string>
     <string name="request_limit">Вы можeте сделать только %d запросов(а).</string>
     <string name="request_used">Вы имеете %d запрошенных иконок.</string>
     <string name="request_limit_buy">Вы можете купить Премиум запросы и просить больше значков.</string>
     <string name="request_limit_reset">Ограничение запросов сбрасывается при каждом обновлении.</string>
     <!-- Regular Request -->
+    <string name="regular_request">Обычный запрос иконок</string>
+    <string name="regular_request_desc">Выбери нужные значки и нажми кнопку отправить, тогда мы поймем, какие иконки хочешь ты.</string>
+    <string name="regular_request_count">Максимальное количество\n%d</string>
+    <string name="regular_request_used">Запрошено\n%d</string>
+    <string name="regular_request_available">Осталось\n%d</string>
     <!-- Premium Request -->
     <string name="premium_request">Премиум запрос</string>
     <string name="premium_request_no_internet">Убедитесь, что ваш телефон подключен к интернету прежде, чем отправить премиум запрос</string>
     <string name="premium_request_desc">Оплатить премиум запрос. Вы можете получить запрошенные приложения быстрее, используя премиум запрос.</string>
     <string name="premium_request_buy">Купить</string>
+    <string name="premium_request_count">Максимальное количество\n%d</string>
+    <string name="premium_request_used">Запрошено\n%d</string>
+    <string name="premium_request_available">Осталось\n%d</string>
     <string name="premium_request_already_purchased">У вас есть еще %d премиум запросов. 
 Вы должны использовать все из них, прежде чем снова покупать пакет Премиум запросов.</string>
     <string name="premium_request_limit">У Вас есть только %d премиум запроса(ов),</string>
@@ -158,6 +187,11 @@
     <string name="connection_failed">Невозможно получить данные с сервера</string>
     <string name="wallpaper_apply">Применить обои</string>
     <string name="wallpaper_save_to_device">Сохранить обои</string>
+    <!-- Presets -->
+    <string name="presets_load_failed">Не удалось загрузить шаблоны</string>
+    <string name="presets_storage_permission">Разрешение хранилища необходимо для предварительного просмотра обоев</string>
+    <string name="presets_required_apps">Необходимые приложения для использования шаблонов</string>
+    <string name="presets_required_apps_not_installed">Необходимые приложения для использования шаблонов не установлены. Пожалуйста, установите отсутствующие приложения и попробуйте снова.</string>
     <!-- Preferences -->
     <string name="pref_data_header">Данные и кэш</string>
     <string name="pref_data_cache">Очистить кэш</string>
@@ -188,6 +222,9 @@
     <string name="pref_others_reset_tutorial">Сбросить обучение</string>
     <string name="pref_others_reset_tutorial_reset">Обучение сброшено</string>
     <!-- Themes -->
+    <string name="theme_name_auto">Авто</string>
+    <string name="theme_name_light">Светлая</string>
+    <string name="theme_name_dark">Тёмная</string>
     <!-- Permission -->
     <string name="permission_storage_denied">Требуется разрешение хранения для сохранения обоев</string>
     <!-- Intent -->
@@ -201,6 +238,8 @@
     <string name="intent_email_not_supported_message">Выбран не поддерживаемый клиент. Пожалуйста, выберите другой почтовый клиент</string>
     <!-- About -->
     <string name="about_contributors_title">Авторы</string>
+    <string name="about_privacy_policy_title">Политика конфиденциальности</string>
+    <string name="about_terms_and_conditions_title">Правила и условия</string>
     <!-- Report Bugs -->
     <string name="report_bugs_desc">Пожалуйста, опишите ваши проблемы</string>
     <string name="report_bugs_desc_hint">Описание</string>
@@ -215,6 +254,7 @@
     <string name="crash_report_message">К сожалению, %s был закрыт. Выберите \"Отправить отчет\" ниже, чтобы помочь разработчику исправить эту ошибку.</string>
     <string name="crash_report_send">Отправить отчет</string>
     <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
     <string name="about_dashboard_dev">CandyBar - это набор иконок с открытым исходным кодом, доступным на андроид на GitHub. Разработано Dani Mahardhika.</string>
     <string name="about_open_source_licenses">Лицензия на открытый исходный код</string>
     <string name="about_dashboard_contributors">Авторы CandyBar</string>
@@ -222,4 +262,13 @@
     <!-- DrawerToggle -->
     <string name="txt_open">Открыть</string>
     <string name="txt_close">Закрыть</string>
+    <string name="txt_new">Новый</string>
+    <!-- Content descriptions for screen readers -->
+    <string name="bookmark_button_content_description">Добавить эту иконку в закладки</string>
+    <string name="icon_search_close_button_content_description">Закрыть поиск иконок</string>
+    <string name="icon_request_submit_button_content_description">Отправить запрос на иконку</string>
+    <string name="icon_list_content_description">Список иконок, включенных в пакет</string>
+    <string name="icon_search_list_content_description">Список иконок, соответствующие поисковому запросу</string>
+    <string name="about_item_social_content_description">Ссылка на онлайн профиль автора пакета иконок: </string>
+    <string name="share_icon_pack_button_content_description">Поделитесь этим приложением с другими</string>
 </resources>
