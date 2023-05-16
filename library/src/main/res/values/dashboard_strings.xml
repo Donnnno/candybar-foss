@@ -126,7 +126,6 @@
     <string name="apply_supported">Supported Launchers</string>
 
     <string name="apply_manual">%1$s Launcher doesn\'t support direct apply but you can apply %2$s manually from the launcher settings.</string>
-    <string name="apply_manual_evie">Tap and hold on homescreen - Settings - Icon Pack - choose %s.</string>
     <string name="apply_manual_kvaesitso">Kvaesitso doesn\'t support direct apply but you can follow these steps:</string>
     <string name="apply_manual_kvaesitso_step_1">Open Kvaesitso\'s settings</string>
     <string name="apply_manual_kvaesitso_step_2">Tap \"Grid &amp; Icons\"</string>
