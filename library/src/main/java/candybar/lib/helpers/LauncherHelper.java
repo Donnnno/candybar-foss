@@ -168,7 +168,7 @@ public class LauncherHelper {
                 new String[]{"de.mm20.launcher2.release"},
                 false),
         ONEUI(
-                "One UI",
+                "Samsung One UI",
                 R.drawable.ic_launcher_one_ui,
                 new String[]{"com.sec.android.app.launcher"},
                 false),
