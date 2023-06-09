@@ -1,11 +1,11 @@
 package candybar.lib.applications;
 
+import android.app.Application;
 import android.content.Intent;
 import android.content.Context;
 import androidx.annotation.IntRange;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.multidex.MultiDexApplication;
 
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
@@ -43,7 +43,7 @@ import candybar.lib.utils.JsonStructure;
  * limitations under the License.
  */
 
-public abstract class CandyBarApplication extends MultiDexApplication {
+public abstract class CandyBarApplication extends Application {
 
     private static Configuration mConfiguration;
     private Thread.UncaughtExceptionHandler mHandler;

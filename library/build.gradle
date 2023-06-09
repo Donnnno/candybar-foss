@@ -50,7 +50,6 @@ android {
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
         vectorDrawables.useSupportLibrary true
-        multiDexEnabled true
         buildConfigField 'String', 'VERSION_NAME', "\"${rootProject.ext.VersionName}\""
     }
 
