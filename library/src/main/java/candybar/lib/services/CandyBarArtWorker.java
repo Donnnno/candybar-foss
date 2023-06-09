@@ -52,11 +52,11 @@ public class CandyBarArtWorker extends Worker {
     @Override
     @NonNull
     public Result doWork() {
-        LogUtil.d("Executing doWork() for Muzei");
-        if (!URLUtil.isValidUrl(CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(mContext))) {
+        // This code doesn't do much so it's commented
+        /*if (!URLUtil.isValidUrl(CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(mContext))) {
             LogUtil.e("Not a valid Wallpaper JSON URL");
             return Result.failure();
-        }
+        }*/
 
         List<Wallpaper> wallpapers = Database.get(mContext).getWallpapers(null);
 

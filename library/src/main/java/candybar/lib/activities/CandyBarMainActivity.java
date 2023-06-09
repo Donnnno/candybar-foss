@@ -47,8 +47,6 @@ import com.google.android.material.navigation.NavigationView;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -550,13 +548,9 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     if (WallpaperHelper.getWallpaperType(this) != WallpaperHelper.CLOUD_WALLPAPERS)
                         return;
 
-                    String wallpaperUrl = CandyBarApplication.getConfiguration().getConfigHandler().wallpaperJson(this);
-                    URL url = new URL(wallpaperUrl);
-                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                    connection.setConnectTimeout(15000);
+                    InputStream stream = WallpaperHelper.getJSONStream(this);
 
-                    if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                        InputStream stream = connection.getInputStream();
+                    if (stream != null) {
                         List<?> list = JsonHelper.parseList(stream);
                         if (list == null) return;
 
@@ -571,7 +565,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                                 }
                             }
                         }
-
                         this.runOnUiThread(() -> onWallpapersChecked(wallpapers.size()));
                     }
                 } catch (IOException e) {
