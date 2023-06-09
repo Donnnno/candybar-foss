@@ -46,12 +46,10 @@ Just explore the wiki to get started.
 ### [Wiki ➜](https://github.com/zixpo/candybar-sample/wiki)
 
 # Features
-~~- License checker~~ 
-- Apply: 32 launchers
-- Icon picker: See all icons
+- Apply: Directly apply in supported launcher
+- - Icon picker: See all icons
 - Icon request
   - Regular request: Free to request 
-  - ~~Premium request: Pay to request~~ 
   - Support for [Pacific Request Manager](https://pacificmanager.app)
   - Support for custom implementations (e.g. Firestore or AWS Lambda)
 - Cloud based wallpaper
@@ -61,17 +59,17 @@ Just explore the wiki to get started.
 - Settings
   - Clear cache
   - Switch themes - Auto/Light/Dark
-  - ~~Restore purchases: Restore premium requests after reinstalling~~ 
 - Frequently asked questions with search
 - About
 - Donation links
 - Changelog: Shown on every update
 - Muzei live wallpaper
+- Kustom preset support
 - Localization: Supports many languages
-- ~~Support for OneSignal notifications~~
 - Check for updates
 - Control your dashboard remotely with configuration JSON
-
+- API for [advanced configurations](https://github.com/zixpo/candybar-sample/wiki/Advanced-dashboard-configurations)
+- 
 # Apps using Candybar FOSS
 
 |Arcticons|Delta|Snow|Popcons|Papirus|
@@ -86,11 +84,15 @@ Check out the [changelog](/CHANGELOG.md) to find out what's new.
 # Translation
 Help us translate CandyBar in many other languages. [Translate CandyBar](https://crowdin.com/project/candybar).
 
+Already contributed translation? [Submit your name here](https://github.com/zixpo/candybar/discussions/142).
+
 # Need help?
 Need help in something or maybe you have some question, just head out
 to [Q&A Discussions](https://github.com/zixpo/candybar/discussions/categories/q-a).
 Try to find your answer there or ask a new question if you can't find your answer.
 
+### Social
+[Mastodon](https://fosstodon.org/@donno)
 
 **Thanks! Have fun with the dashboard 😉**
 
