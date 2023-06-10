@@ -1,3 +1,23 @@
+
+[moertel]: https://github.com/moertel
+
+[Donnnno]: https://github.com/Donnnno
+
+# v3.17.4
+
+- Ability to load wallpapers from `assets`
+- Removed MultiDex (thanks to [@connyduck](https://github.com/connyduck))
+- Added support for visibly disabled requests (thanks to [@moertel][moertel])
+- Updated launchers (thanks to [@Donnnno][Donnnno])
+- Added support for rendering `VectorDrawable`
+- Updated translations
+
+# v3.17.3
+
+- Add support for formatting FAQs
+- Fixed home intro not showing when tutorials are reset using the `Setting` sections
+
+
 # v3.17.2
 - Configuration for filtering out apps in requests. Refer to [this issue](https://github.com/zixpo/candybar/issues/123) for more details
 - Configuration for enabling analytics in the app

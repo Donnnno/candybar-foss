@@ -2,21 +2,18 @@
 <resources>
 
     <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">December 11, 2022</string>
-
+    <string name="changelog_date" translatable="false">June 10, 2023</string>
     <!-- Changelog support html formatting
     * <b> for Bold
     * <i> for Italic
     * <u> for Underline
     * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Updated AGP, dependencies and translations</item>
-        <item>Migrated to Billing Library v5.1</item>
-        <item>Fixed icon requests failing when using Gmail</item>
-        <item>Fixed keyboard not showing in search</item>
-        <item>Added better fast scroller in icons section</item>
-        <item>Pressing the clock should work again</item>
-        <item>Bump Min SDK to 21</item>
+        <item>Ability to load wallpapers from `assets`</item>
+        <item>Removed MultiDex (thanks to @connyduck)</item>
+        <item>Added support for visibly disabled requests (thanks to @moertel)</item>
+        <item>Updated launchers (thanks to @Donnnno)</item>
+        <item>Added support for rendering VectorDrawable</item>
     </string-array>
 
 </resources>
