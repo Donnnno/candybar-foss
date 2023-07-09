@@ -1,5 +1,7 @@
 package candybar.lib.activities;
 
+import static candybar.lib.helpers.DrawableHelper.getDrawableId;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -420,12 +422,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         supportInvalidateOptionsMenu();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        LogUtil.d(">>>>>>>>>>>>>> onOptionsItemSelected: " + item.getItemId());
-        return super.onOptionsItemSelected(item);
-    }
-
     private void initNavigationView(Toolbar toolbar) {
         mDrawerToggle = new ActionBarDrawerToggle(
                 this, mDrawerLayout, toolbar, R.string.txt_open, R.string.txt_close) {
@@ -529,7 +525,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         }
 
         if (!URLUtil.isValidUrl(imageUrl)) {
-            imageUrl = "drawable://" + DrawableHelper.getResourceId(this, imageUrl);
+            imageUrl = "drawable://" + getDrawableId(imageUrl);
         }
 
         final Context context = this;

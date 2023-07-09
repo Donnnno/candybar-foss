@@ -37,8 +37,6 @@ import candybar.lib.fragments.dialog.IconPreviewFragment;
 import candybar.lib.items.Icon;
 import candybar.lib.utils.CandyBarGlideModule;
 
-import static candybar.lib.helpers.DrawableHelper.toBitmap;
-import static com.danimahardhika.android.helpers.core.DrawableHelper.getResourceId;
 import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
 
 /*
@@ -85,7 +83,7 @@ public class IconsHelper {
                 } else if (parser.getName().equals("item")) {
                     String drawableName = parser.getAttributeValue(null, "drawable");
                     String customName = parser.getAttributeValue(null, "name");
-                    int id = getResourceId(context, drawableName);
+                    int id = DrawableHelper.getDrawableId(drawableName);
                     if (id > 0) {
                         icons.add(new Icon(drawableName, customName, id));
                     }
@@ -268,8 +266,7 @@ public class IconsHelper {
         File file = new File(directory, fileName);
         try {
             Thread.sleep(2);
-            Bitmap bitmap = toBitmap(drawable);
-
+            Bitmap bitmap = DrawableHelper.toBitmap(drawable);
             if (files.contains(file.toString())) {
                 fileName = fileName.replace(".png", "_" + System.currentTimeMillis() + ".png");
                 file = new File(directory, fileName);
