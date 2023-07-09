@@ -401,8 +401,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             int color = ContextCompat.getColor(this, R.color.toolbarIcon);
             toolbar.setNavigationIcon(DrawableHelper.getTintedDrawable(
                     this, R.drawable.ic_toolbar_back, color));
-            toolbar.setNavigationOnClickListener(view -> onBackPressed());
-        } else {
+            // It does not work and causes issue with back press on icon search fragment
+            // toolbar.setNavigationOnClickListener(view -> onBackPressed());        } else {
             SoftKeyboardHelper.closeKeyboard(this);
             ColorHelper.setStatusBarColor(this, Color.TRANSPARENT, true);
             if (CandyBarApplication.getConfiguration().getNavigationIcon() == CandyBarApplication.NavigationIcon.DEFAULT) {
@@ -421,6 +421,11 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         supportInvalidateOptionsMenu();
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        LogUtil.d(">>>>>>>>>>>>>> onOptionsItemSelected: " + item.getItemId());
+        return super.onOptionsItemSelected(item);
+    }
 
     private void initNavigationView(Toolbar toolbar) {
         mDrawerToggle = new ActionBarDrawerToggle(
