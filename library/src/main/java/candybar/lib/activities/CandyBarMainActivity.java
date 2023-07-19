@@ -36,6 +36,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.afollestad.materialdialogs.BuildConfig;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -46,6 +47,7 @@ import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
 import com.danimahardhika.android.helpers.permission.PermissionCode;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.color.DynamicColors;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,7 +55,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import candybar.lib.BuildConfig;
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
@@ -141,15 +142,41 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         final boolean isDarkTheme = prevIsDarkTheme = ThemeHelper.isDarkTheme(this);
 
         final int nightMode;
-        switch (Preferences.get(this).getTheme()) {
-            case LIGHT:
-                nightMode = AppCompatDelegate.MODE_NIGHT_NO;
-                break;
-            case DARK:
-                nightMode = AppCompatDelegate.MODE_NIGHT_YES;
-                break;
-            default:
-                nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+        int androidVersion = Build.VERSION.SDK_INT;
+        if (androidVersion < Build.VERSION_CODES.S) {
+            // Android version is less than 12
+            switch (Preferences.get(this).getTheme()) {
+                case LIGHT:
+                    nightMode = AppCompatDelegate.MODE_NIGHT_NO;
+                    break;
+                case DARK:
+                    nightMode = AppCompatDelegate.MODE_NIGHT_YES;
+                    break;
+                case MATERIAL_YOU:
+                    // Display a toast message about Material You availability on Android 12 and up.
+                    Toast.makeText(this, "Material You available only on Android 12 and up! \n Following system theme...", Toast.LENGTH_SHORT).show();
+                    nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+                    break;
+                default:
+                    nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+                    break;
+            }
+        } else {
+            switch (Preferences.get(this).getTheme()) {
+                case LIGHT:
+                    nightMode = AppCompatDelegate.MODE_NIGHT_NO;
+                    break;
+                case DARK:
+                    nightMode = AppCompatDelegate.MODE_NIGHT_YES;
+                    break;
+                case MATERIAL_YOU:
+                    DynamicColors.applyToActivitiesIfAvailable(this.getApplication());
+                    nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+                    break;
+                default:
+                    nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+                    break;
+            }
         }
         AppCompatDelegate.setDefaultNightMode(nightMode);
 
