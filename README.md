@@ -2,7 +2,7 @@
 [![JitPack](https://img.shields.io/jitpack/v/github/zixpo/candybar?color=4c1&label=JitPack&style=flat-square)](https://jitpack.io/#donnnno/candybar-foss)
 [![License](https://img.shields.io/github/license/zixpo/candybar?style=flat-square)](/LICENSE)
 
-An F-Droid compatible version of Candybar, easy to use.
+An F-Droid compatible version of Candybar, easy to use, and free of Google libraries!
 
 Get started by downloarding the sample here:
 https://github.com/Donnnno/candybar-foss-sample/archive/main.zip
@@ -11,9 +11,8 @@ Original description below:
 
 <hr>
 
-Improved version of the original [CandyBar Dashboard](https://github.com/danimahardhika/candybar-library).
+Forked from the  [CandyBar Dashboard](https://github.com/zixpo/candybar)
 
-Check out [Blueprint Dashboard](https://github.com/jahirfiquitiva/blueprint/). It's modular and uses new build features. You may like it :D
 
 This is the library of CandyBar Dashboard. It is only used for development purpose. Use the [sample implementation](https://github.com/Donnnno/candybar-foss-sample/archive/main.zip) for making icon packs.
 
