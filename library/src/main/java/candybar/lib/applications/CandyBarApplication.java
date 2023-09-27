@@ -178,6 +178,8 @@ public abstract class CandyBarApplication extends Application {
         private String mTabAllIconsTitle = "All Icons";
         private String[] mCategoryForTabAllIcons = null;
 
+        private String[] mExcludedCategoryForSearch = null;
+
         private ShadowOptions mShadowOptions = new ShadowOptions();
         private boolean mIsDashboardThemingEnabled = true;
         private int mWallpaperGridPreviewQuality = 4;
@@ -293,6 +295,11 @@ public abstract class CandyBarApplication extends Application {
 
         public Configuration setCategoryForTabAllIcons(@NonNull String[] categories) {
             mCategoryForTabAllIcons = categories;
+            return this;
+        }
+
+        public Configuration setExcludedCategoryForSearch(@NonNull String[] categories) {
+            mExcludedCategoryForSearch = categories;
             return this;
         }
 
@@ -473,6 +480,10 @@ public abstract class CandyBarApplication extends Application {
 
         public String[] getCategoryForTabAllIcons() {
             return mCategoryForTabAllIcons;
+        }
+
+        public String[] getExcludedCategoryForSearch() {
+            return mExcludedCategoryForSearch;
         }
 
         @NonNull
