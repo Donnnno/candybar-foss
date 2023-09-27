@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="changelog_date" translatable="false">September 27, 2023</string>
 
-    <!-- Leave empty if you don't want to show changelog date -->
-    <string name="changelog_date" translatable="false">June 10, 2023</string>
-    <!-- Changelog support html formatting
-    * <b> for Bold
-    * <i> for Italic
-    * <u> for Underline
-    * <a href="linkUrl">Link Text</a> for links -->
     <string-array name="changelog">
-        <item>Ability to load wallpapers from `assets`</item>
-        <item>Removed MultiDex (thanks to @connyduck)</item>
-        <item>Added support for visibly disabled requests (thanks to @moertel)</item>
-        <item>Updated launchers (thanks to @Donnnno)</item>
-        <item>Added support for rendering VectorDrawable</item>
+        <item>Added new launchers</item>
+        <item>Added option to exclude categories from search</item>
     </string-array>
 
 </resources>
