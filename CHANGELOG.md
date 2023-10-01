@@ -1,20 +1,28 @@
-
 [moertel]: https://github.com/moertel
 
 [Donnnno]: https://github.com/Donnnno
 
+# v3.18.4
+- Added new launchers
+- Added option to exclude categories from search
 
 # v3.18.3
+- Removed duplicated code, fixes issue with icons not loading when searching icons
+
+# v3.18.2
 - Fix icon search not loading when `show_icon_name` is set to `false`
+
+# v3.18.0
 - Improved initial load speed. Now loads 30000 icons under 5 seconds.
 - Fixed memory leak in icon search, uses less memory.
 - Fixed unable to download offline wallpapers.
+
+# v3.17.5
 - Fix the issue related to "Restore purchases"
 - Probably fix the issue with icon search when navigating back
 - Minor fixes
 
 # v3.17.4
-
 - Ability to load wallpapers from `assets`
 - Removed MultiDex (thanks to [@connyduck](https://github.com/connyduck))
 - Added support for visibly disabled requests (thanks to [@moertel][moertel])
@@ -23,12 +31,16 @@
 - Updated translations
 
 # v3.17.3
-
 - Add support for formatting FAQs
 - Fixed home intro not showing when tutorials are reset using the `Setting` sections
 
+# v3.7.2
+- Added ZenUI to launcher. It was deleted by mistake.
 
-# v3.17.2
+# v3.17.1
+- Updated Gradle, AGP and dependencies
+
+# v3.17.0
 - Configuration for filtering out apps in requests. Refer to [this issue](https://github.com/zixpo/candybar/issues/123) for more details
 - Configuration for enabling analytics in the app
 - Now supports dynamic configuration for wallpaper and config JSON
@@ -40,7 +52,7 @@
 - Added option to enable/disable the "Restore purchases" option
 - Updated translations
 
-Big thanks to [@moertel](//moertel) and [@Donnnno](//Donnnno) for their contribution.
+Big thanks to [@moertel][moertel] and [@Donnnno][Donnnno] for their contribution.
 
 # v3.16.2
 - Fixed app crash
@@ -54,13 +66,14 @@ Big thanks to [@moertel](//moertel) and [@Donnnno](//Donnnno) for their contribu
 - Fixed icon requests failing when using Gmail
 - Fixed keyboard not showing in search
 - Added better fast scroller in icons section
-- Pressing the clock should work again
-- Bump Min SDK to 21
+- Bumped Min SDK to 21
 
-Thanks to [@moertel](//moertel), [@randomvector](//randomvector), [@one4studioicons](//one4studioicons)
+Thanks to [@moertel][moertel], [@randomvector](//randomvector)
+, [@one4studioicons](//one4studioicons)
 for helping with the issues.
 
 # v3.15.0
+- Remove Play Store check feature as play store no longer leaves any signature.
 - Targets Android 13
 - Updated Android Gradle Plugin and Gradle
 - Updated translations
@@ -78,11 +91,15 @@ for helping with the issues.
 - Updated Android Gradle Plugin
 - Rebuilds only current premium request
 - Ability to render layered drawables
-- Fixed an issue with the request fragment where the first missing app was not showing up when premium request was disabled (Thanks to [@moertel](https://github.com/moertel) for the research)
+- Fixed an issue with the request fragment where the first missing app was not showing up when
+  premium request was disabled
+  (Thanks to [@moertel][moertel] for the research)
 - Updated dependencies
 - Now targets Android S (API 32)
+- Hide old launchers in apply section (I will permanently remove them later)
 - Updated to work with Pacific Manager (Thanks to [@justinkruit](https://github.com/justinkruit))
-- Added support for custom icon request mode which you can configure programmatically using Java (Thanks to [@moertel](https://github.com/moertel))
+- Added support for custom icon request mode which you can configure programmatically using Java (
+  Thanks to [@moertel][moertel])
 
 # v3.13.2
 - Updated Android Gradle Plugin
@@ -242,7 +259,6 @@ for helping with the issues.
 - Added BlackBerry Launcher.
 - Added Flick Launcher.
 
-
 # v3.5.0-beta.6.6
 - Fix wallpaper download issue with Android 10.
 - Show Loader while icon are being loaded.
@@ -268,7 +284,6 @@ for helping with the issues.
 # v3.5.0-beta.6.3
 - Now you can exclude launchers.
 - Fixed Many Small Bugs.
-
 
 # v3.5.0-beta.6.1
 - Added support for Adaptive Icons.
