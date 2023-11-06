@@ -258,18 +258,12 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             File cache = getCacheDir();
             FileHelper.clearDirectory(cache);
         };
+        final Runnable onAllChecksCompleted = () -> {
+            Preferences.get(this).setFirstRun(false);
+            onNewVersion.run();
+        };
 
-        if (Preferences.get(this).isFirstRun()) {
-            final Runnable checkLicenseIfEnabled = () -> {
-                final Runnable onAllChecksCompleted = () -> {
-                    Preferences.get(this).setFirstRun(false);
-                    onNewVersion.run();
-                };
-
-                    onAllChecksCompleted.run();
-            };
-        }
-
+        onAllChecksCompleted.run();
     }
 
     @Override
@@ -690,25 +684,14 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
     public static class ActivityConfiguration {
 
-        private boolean mIsLicenseCheckerEnabled;
         private byte[] mRandomString;
-        private String mLicenseKey;
         private String[] mDonationProductsId;
         private String[] mPremiumRequestProductsId;
         private int[] mPremiumRequestProductsCount;
 
-        public ActivityConfiguration setLicenseCheckerEnabled(boolean enabled) {
-            mIsLicenseCheckerEnabled = enabled;
-            return this;
-        }
 
         public ActivityConfiguration setRandomString(@NonNull byte[] randomString) {
             mRandomString = randomString;
-            return this;
-        }
-
-        public ActivityConfiguration setLicenseKey(@NonNull String licenseKey) {
-            mLicenseKey = licenseKey;
             return this;
         }
 
@@ -723,17 +706,10 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             return this;
         }
 
-        public boolean isLicenseCheckerEnabled() {
-            return mIsLicenseCheckerEnabled;
-        }
-
         public byte[] getRandomString() {
             return mRandomString;
         }
 
-        public String getLicenseKey() {
-            return mLicenseKey;
-        }
 
         public String[] getDonationProductsId() {
             return mDonationProductsId;
