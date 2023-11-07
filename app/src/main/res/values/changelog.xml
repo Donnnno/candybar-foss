@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="changelog_date" translatable="false">September 27, 2023</string>
+    <string name="changelog_date" translatable="false">November 7, 2023</string>
 
     <string-array name="changelog">
-        <item>Added new launchers</item>
-        <item>Added option to exclude categories from search</item>
+        <item>Added new soical media icons</item>
+        <item>A fix for the changelogs not showing</item>
     </string-array>
 
 </resources>

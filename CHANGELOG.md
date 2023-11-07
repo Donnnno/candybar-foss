@@ -2,6 +2,10 @@
 
 [Donnnno]: https://github.com/Donnnno
 
+# v3.18.5
+- Added new soical media icons
+- A fix for the changelogs not showing
+
 # v3.18.4
 - Added new launchers
 - Added option to exclude categories from search
