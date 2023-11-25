@@ -9,7 +9,7 @@
     <string name="default_theme">auto</string>
 
     <!-- CONFIG: MUZEI -->
-    <string name="muzei_art_source_name">CandyBar</string>
+    <string name="muzei_art_source_name">CandyBar-FOSS</string>
     <string name="muzei_art_source_desc">Pleasing wallpapers from CandyBar</string>
     <color name="muzei_color">#0082B4</color>
 
@@ -35,8 +35,8 @@
     <string name="home_image_style">card_landscape</string>
     <string name="home_description">
         <![CDATA[
-        CandyBar is an <b>Android Icon Pack Dashboard</b>. It has <i>many features</i>. Backed by the <u>community</u>.
-        Get it from <a href="https://github.com/zixpo/candybar">GitHub</a>.
+        CandyBar-FOSS is an <b>Android Icon Pack Dashboard</b>. It has <i>many features</i>. Backed by the <u>community</u>.
+        Get it from <a href="https://github.com/Donnnno/candybar-foss">GitHub</a>.
         ]]>
     </string>
     <string name="rate_and_review_link">https://play.google.com/store/apps/details?id={{packageName}}</string>
@@ -88,14 +88,15 @@
     <string name="about_title">CandyBar \nMaterial Dashboard</string>
     <string name="about_desc">
         <![CDATA[
-        CandyBar is an <b>Android Icon Pack Dashboard</b>. It has <i>many features</i>. Backed by the <u>community</u>.
-        Get it from <a href="https://github.com/zixpo/candybar">GitHub</a>.
+        CandyBar-FOSS is an <b>Android Icon Pack Dashboard</b>. It has <i>many features</i>. Backed by the <u>community</u>.
+        Get it from <a href="https://github.com/Donnnno/candybar-foss">GitHub</a>.
         ]]>
     </string>
     <string-array name="about_social_links">
         <item>https://www.instagram.com/_u/yourusername</item>
         <item>https://twitter.com/</item>
         <item>https://www.behance.net/</item>
+        <item>https://matrix.to/</item>
         <item>http://github.com/yourusername</item>
         <item>http://www.yourwebsite.com</item>
         <item>your@email.com</item>

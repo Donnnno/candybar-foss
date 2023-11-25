@@ -258,12 +258,16 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             File cache = getCacheDir();
             FileHelper.clearDirectory(cache);
         };
-        final Runnable onAllChecksCompleted = () -> {
-            Preferences.get(this).setFirstRun(false);
-            onNewVersion.run();
-        };
 
-        onAllChecksCompleted.run();
+
+        if (Preferences.get(this).isFirstRun()) {
+            final Runnable onAllChecksCompleted = () -> {
+                Preferences.get(this).setFirstRun(false);
+                onNewVersion.run();
+            };
+
+            onAllChecksCompleted.run();
+        }
     }
 
     @Override
