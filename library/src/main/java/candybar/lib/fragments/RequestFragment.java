@@ -23,6 +23,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -111,6 +113,12 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         mFab = view.findViewById(R.id.fab);
         mFastScroll = view.findViewById(R.id.fastscroll);
         mProgress = view.findViewById(R.id.progress);
+
+        ViewCompat.setOnApplyWindowInsetsListener(mFab, (v, insets) -> {
+            ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
+            params.bottomMargin = insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom + 50;
+            return WindowInsetsCompat.CONSUMED;
+        });
 
         if (!Preferences.get(requireActivity()).isToolbarShadowEnabled()) {
             View shadow = view.findViewById(R.id.shadow);
