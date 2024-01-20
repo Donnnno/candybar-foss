@@ -43,7 +43,7 @@ allprojects {
 
 android {
     compileSdk rootProject.ext.CompileSdk
-    
+
     namespace 'candybar.lib'
 
     defaultConfig {
