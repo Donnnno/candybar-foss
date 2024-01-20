@@ -89,6 +89,7 @@ import candybar.lib.preferences.Preferences;
 import candybar.lib.services.CandyBarService;
 import candybar.lib.tasks.IconRequestTask;
 import candybar.lib.tasks.IconsLoaderTask;
+import candybar.lib.tasks.WallpaperThumbPreloaderTask;
 import candybar.lib.utils.CandyBarGlideModule;
 import candybar.lib.utils.Extras;
 import candybar.lib.utils.listeners.RequestListener;
@@ -238,6 +239,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         }
 
         checkWallpapers();
+        new WallpaperThumbPreloaderTask(this).execute();
         new IconRequestTask(this).executeOnThreadPool();
         new IconsLoaderTask(this).execute();
 
