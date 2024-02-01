@@ -71,11 +71,9 @@ Just explore the wiki to get started.
 - 
 # Apps using Candybar FOSS
 
-|Arcticons|Delta|Snow|Popcons|Papirus|Cuscon|
-|---|---|---|---|---|---|
-<a href="https://github.com/Donnnno/Arcticons"><img height="60" alt="Arcticons" src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/app/src/normal/play/listings/en-US/graphics/icon/ic_launcher_round.png"></a>|<a href="https://github.com/Delta-Icons/android"><img height="60" alt="Delta" src="https://github.com/Delta-Icons/android/blob/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"></a>|<a href="https://github.com/baitmooth/snow"><img height="80" alt="Snow" src="https://github.com/baitmooth/snow/blob/main/fastlane/metadata/android/en-US/images/icon.png"></a>|<a href="https://github.com/Wil-Design/Popcons/"><img height="60" alt="Popcons" src="https://raw.githubusercontent.com/Wil-Design/Popcons/main/githubmedia/app-icon.png"></a>|<a href="https://github.com/PapirusDevelopmentTeam/papirus_icons"><img height="70" alt="Papirus" src="https://github.com/PapirusDevelopmentTeam/papirus_icons/blob/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"></a>|<a href="https://github.com/MiepHD/cuscon"><img height="60" alt="Cuscon" src="https://raw.githubusercontent.com/MiepHD/cuscon/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"></a>
-
-
+|Arcticons|Delta|Snow|Popcons|Papirus|Cuscon|Dollphone|
+|---|---|---|---|---|---|---|
+<a href="https://github.com/Donnnno/Arcticons"><img height="60" alt="Arcticons" src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/app/src/normal/play/listings/en-US/graphics/icon/ic_launcher_round.png"></a>|<a href="https://github.com/Delta-Icons/android"><img height="60" alt="Delta" src="https://github.com/Delta-Icons/android/blob/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"></a>|<a href="https://github.com/baitmooth/snow"><img height="80" alt="Snow" src="https://github.com/baitmooth/snow/blob/main/fastlane/metadata/android/en-US/images/icon.png"></a>|<a href="https://github.com/Wil-Design/Popcons/"><img height="60" alt="Popcons" src="https://raw.githubusercontent.com/Wil-Design/Popcons/main/githubmedia/app-icon.png"></a>|<a href="https://github.com/PapirusDevelopmentTeam/papirus_icons"><img height="70" alt="Papirus" src="https://github.com/PapirusDevelopmentTeam/papirus_icons/blob/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"></a>|<a href="https://github.com/MiepHD/cuscon"><img height="60" alt="Cuscon" src="https://raw.githubusercontent.com/MiepHD/cuscon/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"></a>|<a href="https://github.com/JapanYoshi/dollphone-foss"><img height="60" alt="Dollphone" src="https://raw.githubusercontent.com/JapanYoshi/dollphone-foss/main/marketing/title.png"></a>
 
 # What's new?
 Check out the [changelog](/CHANGELOG.md) to find out what's new.
