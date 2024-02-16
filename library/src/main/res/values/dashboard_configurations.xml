@@ -14,7 +14,7 @@
         - light
         - dark
     -->
-    <string name="default_theme">auto</string>
+    <string name="default_theme" translatable="false">auto</string>
     <!-- If the Material You theme should be applied by default in supported devices -->
     <bool name="material_you_by_default">true</bool>
 
@@ -22,10 +22,10 @@
         CONFIG: MUZEI
     -->
     <!-- Muzei art source name -->
-    <string name="muzei_art_source_name">Your Art Source Name</string>
+    <string name="muzei_art_source_name" translatable="false">Your Art Source Name</string>
 
     <!-- Muzei art source description -->
-    <string name="muzei_art_source_desc">Your Art Source Description</string>
+    <string name="muzei_art_source_desc" translatable="false">Your Art Source Description</string>
 
     <!-- Muzei base color -->
     <color name="muzei_color">#0082B4</color>
@@ -34,10 +34,10 @@
         CONFIG: KUSTOM
     -->
     <!-- Kustom Pack title. Defaults to the app's name -->
-    <string name="kustom_pack_title">@string/app_name</string>
+    <string name="kustom_pack_title" translatable="false">@string/app_name</string>
 
     <!-- Description that would be shown in Kustom apps -->
-    <string name="kustom_pack_description">Cool Kustom presets</string>
+    <string name="kustom_pack_description" translatable="false">Cool Kustom presets</string>
 
     <!--
     CONFIG: NOVA
@@ -49,13 +49,13 @@
         OFF: Don't allow reshaping at all. Ideal for icons without backgrounds.
         AUTO: Only reshape unthemed icons.
     -->
-    <string name="nova_reshape_legacy_icons">KEEP</string>
+    <string name="nova_reshape_legacy_icons" translatable="false">KEEP</string>
 
     <!--
         CONFIG: HOME
     -->
     <!-- Home title. This will be shown in the home page -->
-    <string name="home_title">CandyBar</string>
+    <string name="home_title" translatable="false">CandyBar</string>
 
     <!-- Home image
         If you want to use an image from url, just put the url here
@@ -65,7 +65,7 @@
         If you want to use a solid color, you can put the hex color code here
         ex: <string name="home_image">#000000</string>
         -->
-    <string name="home_image">https://drive.google.com/uc?id=0B0f4ypHfNKm5bVo5aHFOLVZpNlE</string>
+    <string name="home_image" translatable="false">https://drive.google.com/uc?id=0B0f4ypHfNKm5bVo5aHFOLVZpNlE</string>
 
     <!-- Home image style
         Available choices:
@@ -74,7 +74,7 @@
         - landscape
         - square
     -->
-    <string name="home_image_style">card_landscape</string>
+    <string name="home_image_style" translatable="false">card_landscape</string>
 
     <!-- Description which will be shown in the home page.
         Put your markup/text inside of `<![CDATA[` and `]]>`
@@ -83,17 +83,17 @@
         If you don't want to show any description, just leave this empty
         ex: <string name="home_description"></string>
         -->
-    <string name="home_description">Some Desc</string>
+    <string name="home_description" translatable="false">Some Desc</string>
 
     <!-- Link to your app's Rate and Review page.
         Leave this empty to disable the "Rate and Review" button.
         You can use special keyword `{{packageName}}`, `{{packageName}}` will be replaced with your app's package name -->
-    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id={{packageName}}</string>
+    <string name="rate_and_review_link" translatable="false">https://play.google.com/store/apps/details?id={{packageName}}</string>
 
     <!-- Link to your app's main page. It will be used when your user shares your app using "Share" button.
         Leave this empty to disable the "Share" button.
         You can use special keyword `{{packageName}}`, `{{packageName}}` will be replaced with your app's package name -->
-    <string name="share_link">https://play.google.com/store/apps/details?id={{packageName}}</string>
+    <string name="share_link" translatable="false">https://play.google.com/store/apps/details?id={{packageName}}</string>
 
     <!-- Enable "Check for update" button.
         It needs the option "config_json" to be configured in order to work -->
@@ -102,7 +102,7 @@
     <!-- More apps at Google Play Store
         Link to Google Play Store developer page.
         If you don't want to show this, just leave this empty -->
-    <string name="google_play_dev">https://play.google.com/store/apps/dev?id=your_developer_id</string>
+    <string name="google_play_dev" translatable="false">https://play.google.com/store/apps/dev?id=your_developer_id</string>
 
     <!-- Enables the new flat and outline styled cards everywhere -->
     <bool name="use_flat_card">false</bool>
@@ -120,11 +120,11 @@
         If you want to use a solid color, you can put the hex color code here
         ex: <string name="navigation_view_header">#000000</string>
         -->
-    <string name="navigation_view_header">https://drive.google.com/uc?id=0B0f4ypHfNKm5VXlwejdaZ3ZRYVE</string>
+    <string name="navigation_view_header" translatable="false">https://drive.google.com/uc?id=0B0f4ypHfNKm5VXlwejdaZ3ZRYVE</string>
 
     <!-- Navigation view header text
         Leave empty if you don't want to show any text -->
-    <string name="navigation_view_header_title">CandyBar</string>
+    <string name="navigation_view_header_title" translatable="false">CandyBar</string>
 
 
     <!--
