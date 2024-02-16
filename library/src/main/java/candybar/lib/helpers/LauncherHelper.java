@@ -168,6 +168,11 @@ public class LauncherHelper {
                 R.drawable.ic_launcher_microsoft,
                 new String[]{"com.microsoft.launcher"},
                 false),
+        MOTO(
+                "Moto Launcher",
+                R.drawable.ic_launcher_moto,
+                new String[]{"com.motorola.launcher3"},
+                false),
         BLACKBERRY(
                 "BlackBerry",
                 R.drawable.ic_launcher_blackberry,
@@ -615,6 +620,9 @@ public class LauncherHelper {
                 break;
             case MICROSOFT:
                 applyManual(context, launcherPackage, launcherName, null);
+                break;
+            case MOTO:
+                applyManual(context, launcherPackage, launcherName, "com.motorola.personalize.app.IconPacksActivity");
                 break;
             case NIAGARA:
                 try {
