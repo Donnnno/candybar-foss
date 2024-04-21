@@ -94,14 +94,17 @@
         ]]>
     </string>
     <string-array name="about_social_links">
-        <item>https://www.instagram.com/_u/yourusername</item>
+        <item>https://instagram.com/_u/yourusername</item>
         <item>https://twitter.com/</item>
-        <item>https://www.behance.net/</item>
+        <item>https://behance.net/</item>
         <item>https://matrix.to/</item>
         <item>http://github.com/yourusername</item>
-        <item>http://www.yourwebsite.com</item>
+        <item>http:/yourwebsite.com</item>
         <item>your@email.com</item>
         <item>https://t.me/yourname</item>
+        <item>https://ko-fi.com/yourname</item>
+        <item>https://bsky.app/yourname</item>
+        <item>https://threads.net/yourname</item>
     </string-array>
     <bool name="show_contributors_dialog">true</bool>
     <string name="privacy_policy_link">https://app-privacy-policy-generator.firebaseapp.com/</string>
