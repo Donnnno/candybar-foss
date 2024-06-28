@@ -276,6 +276,13 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
             onAllChecksCompleted.run();
         }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && CandyBarApplication.getConfiguration().isNotificationEnabled()) {
+            int permissionState = ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS);
+            if (permissionState == PackageManager.PERMISSION_DENIED) {
+                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, 10);
+            }
+        }
     }
 
     @Override
@@ -340,6 +347,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        LogUtil.e("Request Code: " + requestCode);
+        LogUtil.e("Storage Code: " + PermissionCode.STORAGE);
         if (requestCode == PermissionCode.STORAGE) {
             if (grantResults.length > 0 &&
                     grantResults[0] == PackageManager.PERMISSION_GRANTED) {

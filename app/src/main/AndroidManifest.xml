@@ -2,7 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:installLocation="auto">
-    
+
+    <!-- If you are not using donation and premium request, you need to remove BILLING permission -->
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <!-- If you are not using license checker, you need to remove CHECK_LICENSE permission -->
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+
+    <!-- If you are using OneSignal then you need to uncomment this line -->
+    <!--<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />-->
 
     <supports-screens
         android:smallScreens="true"
@@ -21,68 +29,71 @@
         android:theme="@style/Theme.App.Starting"
         tools:targetApi="n">
 
-                <!--<activity
-                    android:name=".activities.SplashActivity"
-                    android:launchMode="singleTop"
-                    android:noHistory="true"
-                    android:screenOrientation="portrait"
-                    android:exported="true"
-                    android:theme="@style/CandyBar.Theme.Splash">
-                    <intent-filter>
-                        <action android:name="android.intent.action.MAIN" />
-                        <category android:name="android.intent.category.LAUNCHER" />
-                    </intent-filter>
-                    <meta-data
-                        android:name="android.app.shortcuts"
-                        android:resource="@xml/shortcuts" />
-                </activity>-->
+        <!--<activity
+            android:name=".activities.SplashActivity"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:theme="@style/CandyBar.Theme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>-->
 
-                <activity
-                    android:name=".activities.MainActivity"
-                    android:launchMode="singleTop"
-                    android:exported="true"
-                    android:theme="@style/Theme.App.Starting"
-                    android:configChanges="uiMode|orientation|keyboardHidden|screenSize">
+        <activity
+            android:name=".activities.MainActivity"
+            android:launchMode="singleTop"
+            android:exported="true"
+            android:theme="@style/Theme.App.Starting"
+            android:configChanges="uiMode|orientation|keyboardHidden|screenSize">
 
-                    <intent-filter>
-                        <action android:name="android.intent.action.MAIN" />
-                        <category android:name="android.intent.category.LAUNCHER" />
-                    </intent-filter>
-                    <intent-filter>
-                        <action android:name="android.intent.action.VIEW" />
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
-                        <category android:name="android.intent.category.DEFAULT" />
-                        <category android:name="android.intent.category.BROWSABLE" />
-                    </intent-filter>
-                    <intent-filter>
-                        <action android:name="android.intent.action.GET_CONTENT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
 
-                        <category android:name="android.intent.category.DEFAULT" />
-                        <category android:name="android.intent.category.OPENABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
 
-                        <data android:mimeType="image/*" />
-                    </intent-filter>
-                    <intent-filter>
-                        <action android:name="android.intent.action.SET_WALLPAPER" />
-                        <category android:name="android.intent.category.DEFAULT" />
-                    </intent-filter>
-                    <intent-filter>
-                        <action android:name="android.intent.action.PICK" />
-                        <category android:name="android.intent.category.DEFAULT" />
-                        <data android:mimeType="image/*" />
-                    </intent-filter>
-                    <intent-filter>
-                        <action android:name="android.intent.action.PICK" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SET_WALLPAPER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
 
-                        <category android:name="android.intent.category.DEFAULT" />
-                        <category android:name="android.intent.category.OPENABLE" />
-                    </intent-filter>
-                    <intent-filter>
-                        <action android:name="android.intent.action.PICK" />
-                        <category android:name="android.intent.category.DEFAULT" />
-                        <data android:mimeType="image/*" />
-                    </intent-filter>
-                    <!-- ADW Launcher -->
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <!-- ADW Launcher -->
             <intent-filter>
                 <action android:name="org.adw.launcher.THEMES" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -118,7 +129,7 @@
                 <action android:name="com.gridappsinc.launcher.theme.apk_action" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-            <!-- Moto Launcher -->
+			<!-- Moto Launcher -->
             <intent-filter>
                 <action android:name="com.motorola.launcher.ACTION_ICON_PACK" />
                 <action android:name="com.motorola.launcher3.ICON_PACK_CHANGED" />
@@ -205,7 +216,6 @@
         <!--
             Uncomment the following code to enable Clock Widget.
         -->
-
         <!--<receiver
             android:name=".services.ClockWidget"
             android:label="Clock Widget"
@@ -222,7 +232,6 @@
             Uncomment the following code to enable Kustom.
             Also remove the `<action ... />`s that you don't want.
         -->
-
         <!--<provider
             android:name="org.kustom.api.Provider"
             android:authorities="${applicationId}.kustom.provider"
