@@ -1,5 +1,7 @@
 package candybar.lib.helpers;
 
+import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -36,8 +38,6 @@ import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.IconPreviewFragment;
 import candybar.lib.items.Icon;
 import candybar.lib.utils.CandyBarGlideModule;
-
-import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
 
 /*
  * CandyBar - Material Dashboard
@@ -228,7 +228,7 @@ public class IconsHelper {
                         }
                     })
                     .submit();
-        } else if (action == IntentHelper.IMAGE_PICKER) {
+        } else if (action == IntentHelper.IMAGE_PICKER && CandyBarGlideModule.isValidContextForGlide(context)) {
 
             Glide.with(context)
                     .asBitmap()
@@ -276,29 +276,37 @@ public class IconsHelper {
                     })
                     .submit();
         } else {
-
             IconPreviewFragment.showIconPreview(((AppCompatActivity) context)
                             .getSupportFragmentManager(),
                     icon.getTitle(), icon.getRes(), icon.getDrawableName());
         }
     }
 
+    public interface OnFileNameChange {
+        public void call(String newName);
+    }
+
     @Nullable
-    public static String saveIcon(List<String> files, File directory, Drawable drawable, String name) {
+    public static String saveIcon(List<String> files, File directory, Drawable drawable, String name, OnFileNameChange onFileNameChange) {
+        Bitmap bitmap = DrawableHelper.toBitmap(drawable);
+        assert bitmap != null;
+        return saveBitmap(files, directory, bitmap, name, onFileNameChange);
+    }
+
+    public static String saveBitmap(List<String> files, File directory, Bitmap bitmap, String name, OnFileNameChange onFileNameChange) {
         String fileName = name + ".png";
         File file = new File(directory, fileName);
         try {
             Thread.sleep(2);
-            Bitmap bitmap = DrawableHelper.toBitmap(drawable);
+
             if (files.contains(file.toString())) {
                 fileName = fileName.replace(".png", "_" + System.currentTimeMillis() + ".png");
                 file = new File(directory, fileName);
-
+                onFileNameChange.call(fileName);
                 LogUtil.e("Duplicate File name, Renamed: " + fileName);
             }
 
             FileOutputStream outStream = new FileOutputStream(file);
-            assert bitmap != null;
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
             outStream.flush();
             outStream.close();
