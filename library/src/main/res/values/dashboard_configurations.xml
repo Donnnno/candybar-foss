@@ -14,18 +14,19 @@
         - light
         - dark
     -->
-    <string name="default_theme" translatable="false">auto</string>
-    <!-- If the Material You theme should be applied by default in supported devices -->
+    <string name="default_theme">auto</string>
+    <!-- Whether the Material You theme should be applied by default in supported devices -->
     <bool name="material_you_by_default">true</bool>
+
 
     <!--
         CONFIG: MUZEI
     -->
     <!-- Muzei art source name -->
-    <string name="muzei_art_source_name" translatable="false">Your Art Source Name</string>
+    <string name="muzei_art_source_name">Your Art Source Name</string>
 
     <!-- Muzei art source description -->
-    <string name="muzei_art_source_desc" translatable="false">Your Art Source Description</string>
+    <string name="muzei_art_source_desc">Your Art Source Description</string>
 
     <!-- Muzei base color -->
     <color name="muzei_color">#0082B4</color>
@@ -34,13 +35,13 @@
         CONFIG: KUSTOM
     -->
     <!-- Kustom Pack title. Defaults to the app's name -->
-    <string name="kustom_pack_title" translatable="false">@string/app_name</string>
+    <string name="kustom_pack_title">@string/app_name</string>
 
     <!-- Description that would be shown in Kustom apps -->
-    <string name="kustom_pack_description" translatable="false">Cool Kustom presets</string>
+    <string name="kustom_pack_description">Cool Kustom presets</string>
 
     <!--
-    CONFIG: NOVA
+        CONFIG: NOVA
     -->
     <!-- Control the shape and background of icons in Nova when "direct apply" is used.
     Valid values are:
@@ -49,13 +50,13 @@
         OFF: Don't allow reshaping at all. Ideal for icons without backgrounds.
         AUTO: Only reshape unthemed icons.
     -->
-    <string name="nova_reshape_legacy_icons" translatable="false">KEEP</string>
+    <string name="nova_reshape_legacy_icons">KEEP</string>
 
     <!--
         CONFIG: HOME
     -->
     <!-- Home title. This will be shown in the home page -->
-    <string name="home_title" translatable="false">CandyBar</string>
+    <string name="home_title">CandyBar</string>
 
     <!-- Home image
         If you want to use an image from url, just put the url here
@@ -65,7 +66,7 @@
         If you want to use a solid color, you can put the hex color code here
         ex: <string name="home_image">#000000</string>
         -->
-    <string name="home_image" translatable="false">https://drive.google.com/uc?id=0B0f4ypHfNKm5bVo5aHFOLVZpNlE</string>
+    <string name="home_image">https://drive.google.com/uc?id=0B0f4ypHfNKm5bVo5aHFOLVZpNlE</string>
 
     <!-- Home image style
         Available choices:
@@ -74,7 +75,7 @@
         - landscape
         - square
     -->
-    <string name="home_image_style" translatable="false">card_landscape</string>
+    <string name="home_image_style">card_landscape</string>
 
     <!-- Description which will be shown in the home page.
         Put your markup/text inside of `<![CDATA[` and `]]>`
@@ -83,17 +84,17 @@
         If you don't want to show any description, just leave this empty
         ex: <string name="home_description"></string>
         -->
-    <string name="home_description" translatable="false">Some Desc</string>
+    <string name="home_description">Some Desc</string>
 
     <!-- Link to your app's Rate and Review page.
         Leave this empty to disable the "Rate and Review" button.
         You can use special keyword `{{packageName}}`, `{{packageName}}` will be replaced with your app's package name -->
-    <string name="rate_and_review_link" translatable="false">https://play.google.com/store/apps/details?id={{packageName}}</string>
+    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id={{packageName}}</string>
 
     <!-- Link to your app's main page. It will be used when your user shares your app using "Share" button.
         Leave this empty to disable the "Share" button.
         You can use special keyword `{{packageName}}`, `{{packageName}}` will be replaced with your app's package name -->
-    <string name="share_link" translatable="false">https://play.google.com/store/apps/details?id={{packageName}}</string>
+    <string name="share_link">https://play.google.com/store/apps/details?id={{packageName}}</string>
 
     <!-- Enable "Check for update" button.
         It needs the option "config_json" to be configured in order to work -->
@@ -102,7 +103,7 @@
     <!-- More apps at Google Play Store
         Link to Google Play Store developer page.
         If you don't want to show this, just leave this empty -->
-    <string name="google_play_dev" translatable="false">https://play.google.com/store/apps/dev?id=your_developer_id</string>
+    <string name="google_play_dev">https://play.google.com/store/apps/dev?id=your_developer_id</string>
 
     <!-- Enables the new flat and outline styled cards everywhere -->
     <bool name="use_flat_card">false</bool>
@@ -120,11 +121,11 @@
         If you want to use a solid color, you can put the hex color code here
         ex: <string name="navigation_view_header">#000000</string>
         -->
-    <string name="navigation_view_header" translatable="false">https://drive.google.com/uc?id=0B0f4ypHfNKm5VXlwejdaZ3ZRYVE</string>
+    <string name="navigation_view_header">https://drive.google.com/uc?id=0B0f4ypHfNKm5VXlwejdaZ3ZRYVE</string>
 
     <!-- Navigation view header text
         Leave empty if you don't want to show any text -->
-    <string name="navigation_view_header_title" translatable="false">CandyBar</string>
+    <string name="navigation_view_header_title">CandyBar</string>
 
 
     <!--
@@ -164,9 +165,9 @@
     <bool name="enable_icon_request_limit">false</bool>
 
     <!-- Enable multiple requests for same icon
-    When enabled, users will be able to request the same icon twice. This can be useful if you
-    offer free and premium requests, so a free request doesn't prevent the user from submitting
-    a premium request for the same icon. Can also be useful for a voting system. -->
+        When enabled, users will be able to request the same icon twice. This can be useful if you
+        offer free and premium requests, so a free request doesn't prevent the user from submitting
+        a premium request for the same icon. Can also be useful for a voting system. -->
     <bool name="enable_icon_request_multiple">false</bool>
 
     <!-- Limit the numbers of icon a user can request
@@ -186,6 +187,13 @@
     <!-- Enable JSON check before Requesting Icons -->
     <bool name="json_check_before_request">false</bool>
 
+    <!-- Adds signature that the icon pack is installed from Play Store.
+        When enabled adds a PNG image (__r_icon.png) to icon request ZIP if the app is installed from Play Store.
+        Also the color of the signature icon would be different for every versionCode, it's there so that any user
+        won't be able to add the icon to the ZIP manually to fake that they installed the app from Play Store.
+        So, don't forget to check what color is the signature icon before releasing update of your icon pack. -->
+    <bool name="enable_ps_signature">false</bool>
+
     <!-- Enable or disable premium icon request
         In premium request, your users will purchase a premium request product (which you specify in the "License.java" file)
         Later they can use the premium request product to do premium icon request.
@@ -193,9 +201,9 @@
     <bool name="enable_premium_request">false</bool>
 
     <!-- Enable the option to "Restore Purchases" in Settings section of the app.
-    It would be best if you set it to `false`, because it's known that some
-    people misuse this feature and make **more** premium icon request than the amount
-    they bought -->
+        It would be best if you set it to `false`, because it's known that some
+        people misuse this feature and make **more** premium icon request than the amount
+        they bought -->
     <bool name="enable_restore_purchases">false</bool>
 
     <!-- Take a look inside "License.java" for premium request product -->
@@ -210,7 +218,7 @@
         If you want to hide the information then you should enable this -->
     <bool name="hide_missing_app_count">false</bool>
 
-    <!-- Method to use for icon request. Value can be "email", "pacific" or "custom".
+    <!-- Method to use for icon request. Value can be "email" or "pacific".
         `email` -> Sends icon requests using email
         `pacific` -> Sends icon requests using Pacific Manager
         `custom` -> Sends icon requests to a custom handler that needs to be configured separately
@@ -353,15 +361,18 @@
             tapIntroCircleOuter -->
     <bool name="use_legacy_intro_colors">true</bool>
 
+    <!-- Enable/disable in-app review -->
+    <bool name="enable_in_app_review">true</bool>
+    <!-- After how many seconds the dashboard should count that the user visited the app.
+        By default it is set to 30 seconds. If the user opens the app and stays for 30 seconds,
+        it would be counted as a visit -->
+    <integer name="in_app_review_visit_time">30</integer>
+    <!-- After how many visits the in app review dialog should pop up -->
+    <integer name="in_app_review_after_visits">2</integer>
+
     <!-- These are not documented. As you can guess, these are not for general use -->
-    <string name="version_from_playstore">{{appVersion}} R</string>
-    <string name="version_outside_playstore">{{appVersion}}</string>
     <string name="appfilter_item"><![CDATA[<item component=\"ComponentInfo{{{component}}}\" drawable=\"{{drawable}}\" />]]></string>
     <bool name="quick_apply">true</bool>
     <bool name="show_random_icon">true</bool>
-
-    <!-- These are deprecated and replaced with other items. These are only here so that things don't break. -->
-    <!-- TODO: Remove them in v3.10.0 -->
-    <!-- TODO: Add default values to request options when removing these options -->
 
 </resources>
