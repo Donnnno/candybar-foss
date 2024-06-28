@@ -3,12 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:installLocation="auto">
 
-    <!-- If you are not using donation and premium request, you need to remove BILLING permission -->
-    <uses-permission android:name="com.android.vending.BILLING" />
-
-    <!-- If you are not using license checker, you need to remove CHECK_LICENSE permission -->
-    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
-
     <!-- If you are using OneSignal then you need to uncomment this line -->
     <!--<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />-->
 
