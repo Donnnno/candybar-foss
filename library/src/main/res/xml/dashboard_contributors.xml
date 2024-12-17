@@ -60,5 +60,9 @@
         contribution=""
         image="https://github.com/connyduck.png"
         link="https://github.com/connyduck" />
-
+    <contributor
+        name="Spocky"
+        contribution=""
+        image="https://github.com/spocky.png"
+        link="https://github.com/spocky" />
 </resources>
