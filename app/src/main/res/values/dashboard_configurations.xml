@@ -77,7 +77,7 @@
     <string name="premium_request_arctic_api_key"></string>
 
     <!-- CONFIG: CLOUD WALLPAPERS -->
-    <string name="wallpaper_json">https://delta-icons.github.io/wallpapers/config.json</string>
+    <!--<string name="wallpaper_json">https://delta-icons.github.io/wallpapers/config.json</string> -->
     <!--<string name="wallpaper_json">assets://wallpapers_offline.json</string>-->
     <bool name="enable_wallpaper_download">true</bool>
     <bool name="wallpaper_show_name_author">true</bool>
