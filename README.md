@@ -4,7 +4,7 @@
 
 An F-Droid compatible version of Candybar, easy to use, and free of Google libraries!
 
-Get started by downloarding the sample here:
+Get started by downloading the sample here:
 https://github.com/Donnnno/candybar-foss-sample/archive/main.zip
 
 Original description below:
