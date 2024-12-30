@@ -2,6 +2,21 @@
 
 [Donnnno]: https://github.com/Donnnno
 
+# v3.21.1
+- Fixed deprecated features
+
+# v3.20.4
+- Updated AGP and dependencies
+- Updated Bluesky icon
+- Add support for Projectivy Launcher
+- Updated Photoview
+
+# v3.20.3
+- Update TapTargetView
+
+# v3.20.2
+- Updated Muzei to v3.4.2 and some other dependencies
+
 # v3.20.1
 - Improve notification support
 

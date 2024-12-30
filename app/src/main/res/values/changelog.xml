@@ -3,9 +3,7 @@
     <string name="changelog_date" translatable="false">Dec 17, 2024</string>
 
     <string-array name="changelog">
-        <item>Updated AGP and dependencies</item>
-        <item>Add support for Projectivy Launcher</item>
-        <item>Updated Photoview</item>
+        <item>Fixed deprecated features</item>
     </string-array>
 
 </resources>
