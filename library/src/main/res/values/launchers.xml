@@ -23,6 +23,7 @@
         <item>lg_home</item>
         <item>lucid</item>
         <item>microsoft</item>
+        <item>mlauncher</item>
         <item>moto</item><!-- Will only be displayed if actually detected on device -->
         <item>niagara</item>
         <item>nothing</item>
