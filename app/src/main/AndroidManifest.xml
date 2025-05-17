@@ -201,6 +201,11 @@
                 <action android:name="app.mlauncher.THEME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            <!-- Ion launcher -->
+            <intent-filter>
+                <action android:name="one.zagura.IonLauncher.ICON_PACK" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
         <provider
