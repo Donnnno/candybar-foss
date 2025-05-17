@@ -2,6 +2,13 @@
 
 [Donnnno]: https://github.com/Donnnno
 
+# v3.21.3
+- Add support for IonLauncher
+- Add support for mLauncher 
+- Update AGP
+- Update dependencies
+- Fixed icons showing twice
+
 # v3.21.1
 - Fixed deprecated features
 

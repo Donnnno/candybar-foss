@@ -3,7 +3,11 @@
     <string name="changelog_date" translatable="false">Dec 17, 2024</string>
 
     <string-array name="changelog">
-        <item>Fixed deprecated features</item>
+        <item>Add support for IonLauncher</item>
+        <item>Add support for mLauncher</item>
+        <item>Update AGP</item>
+        <item>Update dependencies</item>
+        <item>Fixed icons showing twice</item>
     </string-array>
 
 </resources>
