@@ -126,7 +126,7 @@ dependencies {
     implementation 'com.github.Donnnno.android-helpers:core:0.1.17'
     implementation 'com.github.Donnnno.android-helpers:animation:0.1.17'
     implementation 'com.github.Donnnno.android-helpers:permission:0.1.17'
-    implementation 'com.github.danimahardhika:DrawMe:4a672e78fc'
+    // implementation 'com.github.danimahardhika:DrawMe:4a672e78fc'
 }
 
 java {
