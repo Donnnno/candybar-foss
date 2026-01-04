@@ -10,6 +10,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Build;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,16 +22,14 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.donnnno.android.helpers.core.ColorHelper;
 import com.donnnno.android.helpers.core.utils.LogUtil;
-import com.danimahardhika.cafebar.CafeBar;
-import com.danimahardhika.cafebar.CafeBarTheme;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.lang.ref.WeakReference;
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 
 import candybar.lib.R;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.ImageSize;
 import candybar.lib.items.Wallpaper;
@@ -349,14 +348,10 @@ public class WallpaperApplyTask extends AsyncTaskBase implements WallpaperProper
         }
 
         if (ok) {
-            CafeBar.builder(mContext.get())
-                    .theme(CafeBarTheme.Custom(ColorHelper.getAttributeColor(
-                            mContext.get(), R.attr.cb_cardBackground)))
-                    .contentTypeface(TypefaceHelper.getRegular(mContext.get()))
-                    .floating(true)
-                    .fitSystemWindow()
-                    .content(R.string.wallpaper_applied)
-                    .show();
+            View view = ((AppCompatActivity) mContext.get()).findViewById(android.R.id.content);
+            if (view != null) {
+                Snackbar.make(view, R.string.wallpaper_applied, Snackbar.LENGTH_LONG).show();
+            }
         } else {
             Toast.makeText(mContext.get(), R.string.wallpaper_apply_failed,
                     Toast.LENGTH_LONG).show();
