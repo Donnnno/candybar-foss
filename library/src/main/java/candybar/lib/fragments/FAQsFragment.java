@@ -25,8 +25,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.SoftKeyboardHelper;
+import com.donnnno.android.helpers.core.utils.LogUtil;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.util.ArrayList;

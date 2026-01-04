@@ -3,6 +3,7 @@ package candybar.lib.adapters;
 import static candybar.lib.helpers.DrawableHelper.getDrawableId;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -39,7 +40,6 @@ import androidx.core.widget.TextViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -47,10 +47,11 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.danimahardhika.android.helpers.core.ColorHelper;
-import com.danimahardhika.android.helpers.core.DrawableHelper;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.ColorHelper;
+import com.donnnno.android.helpers.core.DrawableHelper;
+import com.donnnno.android.helpers.core.utils.LogUtil;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -506,7 +507,7 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private class UpdateChecker extends AsyncTaskBase {
 
-        private MaterialDialog loadingDialog;
+        private Dialog loadingDialog;
         private String latestVersion;
         private String updateUrl;
         private String[] changelog;
@@ -514,16 +515,14 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         @Override
         protected void preRun() {
-            loadingDialog = new MaterialDialog.Builder(mContext)
-                    .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
-                    .content(R.string.checking_for_update)
-                    .cancelable(false)
-                    .canceledOnTouchOutside(false)
-                    .progress(true, 0)
-                    .progressIndeterminateStyle(true)
-                    .build();
+            loadingDialog = new MaterialAlertDialogBuilder(mContext)
+                    .setView(R.layout.dialog_progress)
+                    .setCancelable(false)
+                    .create();
 
             loadingDialog.show();
+            TextView textView = loadingDialog.findViewById(R.id.message);
+            if (textView != null) textView.setText(R.string.checking_for_update);
         }
 
         @Override
@@ -586,28 +585,29 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         @Override
         @SuppressLint("SetTextI18n")
         protected void postRun(boolean ok) {
-            loadingDialog.dismiss();
-            loadingDialog = null;
+            if (loadingDialog != null) {
+                loadingDialog.dismiss();
+                loadingDialog = null;
+            }
 
             if (ok) {
-                MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext)
-                        .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
-                        .customView(R.layout.fragment_update, false);
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(mContext)
+                        .setView(R.layout.fragment_update);
 
                 if (isUpdateAvailable) {
                     builder
-                            .positiveText(R.string.update)
-                            .negativeText(R.string.close)
-                            .onPositive((dialog, which) -> {
+                            .setPositiveButton(R.string.update, (dialog, which) -> {
                                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(updateUrl));
                                 intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
                                 mContext.startActivity(intent);
-                            });
+                            })
+                            .setNegativeButton(R.string.close, null);
                 } else {
-                    builder.positiveText(R.string.close);
+                    builder.setPositiveButton(R.string.close, null);
                 }
 
-                MaterialDialog dialog = builder.build();
+                Dialog dialog = builder.create();
+                dialog.show();
 
                 TextView changelogVersion = (TextView) dialog.findViewById(R.id.changelog_version);
                 ListView mChangelogList = (ListView) dialog.findViewById(R.id.changelog_list);
@@ -622,14 +622,10 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     changelogVersion.setText(mContext.getResources().getString(R.string.no_update_available));
                     mChangelogList.setVisibility(View.GONE);
                 }
-
-                dialog.show();
             } else {
-                new MaterialDialog.Builder(mContext)
-                        .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
-                        .content(R.string.unable_to_load_config)
-                        .positiveText(R.string.close)
-                        .build()
+                new MaterialAlertDialogBuilder(mContext)
+                        .setMessage(R.string.unable_to_load_config)
+                        .setPositiveButton(R.string.close, null)
                         .show();
             }
         }

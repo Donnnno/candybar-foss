@@ -16,7 +16,7 @@ import androidx.core.content.ContextCompat;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.data.DataFetcher;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.utils.LogUtil;
 
 import java.io.IOException;
 import java.io.InputStream;

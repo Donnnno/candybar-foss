@@ -1,18 +1,20 @@
 package candybar.lib.tasks;
 
-import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
+import static com.donnnno.android.helpers.core.FileHelper.getUriFromFile;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.danimahardhika.android.helpers.core.FileHelper;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.FileHelper;
+import com.donnnno.android.helpers.core.utils.LogUtil;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
@@ -23,7 +25,6 @@ import candybar.lib.R;
 import candybar.lib.helpers.DeviceHelper;
 import candybar.lib.helpers.ReportBugsHelper;
 import candybar.lib.helpers.RequestHelper;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
 
@@ -51,7 +52,7 @@ public class ReportBugsTask extends AsyncTaskBase {
     private final String mDescription;
     private String mZipPath = null;
     private StringBuilder mStringBuilder;
-    private MaterialDialog mDialog;
+    private Dialog mDialog;
 
     public ReportBugsTask(Context context, String description) {
         mContext = new WeakReference<>(context);
@@ -60,15 +61,15 @@ public class ReportBugsTask extends AsyncTaskBase {
 
     @Override
     protected void preRun() {
-        mDialog = new MaterialDialog.Builder(mContext.get())
-                .typeface(TypefaceHelper.getMedium(mContext.get()), TypefaceHelper.getRegular(mContext.get()))
-                .content(R.string.report_bugs_building)
-                .progress(true, 0)
-                .progressIndeterminateStyle(true)
-                .cancelable(false)
-                .canceledOnTouchOutside(false)
-                .build();
+        mDialog = new MaterialAlertDialogBuilder(mContext.get())
+                .setView(R.layout.dialog_progress)
+                .setCancelable(false)
+                .create();
         mDialog.show();
+
+        TextView textView = mDialog.findViewById(R.id.message);
+        if (textView != null) textView.setText(R.string.report_bugs_building);
+
         mStringBuilder = new StringBuilder();
     }
 
@@ -111,7 +112,11 @@ public class ReportBugsTask extends AsyncTaskBase {
         if (mContext.get() == null) return;
         if (((AppCompatActivity) mContext.get()).isFinishing()) return;
 
-        mDialog.dismiss();
+        if (mDialog != null) {
+            mDialog.dismiss();
+            mDialog = null;
+        }
+
         if (ok) {
             String emailAddress = mContext.get().getString(R.string.regular_request_email);
 

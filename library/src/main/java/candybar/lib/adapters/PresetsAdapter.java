@@ -21,14 +21,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions;
-import com.danimahardhika.android.helpers.core.ColorHelper;
-import com.danimahardhika.android.helpers.core.DrawableHelper;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.ColorHelper;
+import com.donnnno.android.helpers.core.DrawableHelper;
+import com.donnnno.android.helpers.core.utils.LogUtil;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.kustom.api.preset.AssetPresetFile;
 import org.kustom.api.preset.PresetInfoLoader;
@@ -39,7 +39,6 @@ import java.util.Locale;
 
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Preset;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.CandyBarGlideModule;
@@ -297,10 +296,9 @@ public class PresetsAdapter extends RecyclerView.Adapter<PresetsAdapter.ViewHold
                     }
 
                     if (!getRequiredApps(type).isEmpty()) {
-                        new MaterialDialog.Builder(mContext)
-                                .typeface(TypefaceHelper.getMedium(mContext), TypefaceHelper.getRegular(mContext))
-                                .content(R.string.presets_required_apps_not_installed)
-                                .positiveText(R.string.close)
+                        new MaterialAlertDialogBuilder(mContext)
+                                .setMessage(R.string.presets_required_apps_not_installed)
+                                .setPositiveButton(R.string.close, null)
                                 .show();
                     } else {
                         mContext.startActivity(intent);

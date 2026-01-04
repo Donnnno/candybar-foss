@@ -33,10 +33,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
-import com.danimahardhika.android.helpers.core.ColorHelper;
-import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
-import com.danimahardhika.android.helpers.core.ViewHelper;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.ColorHelper;
+import com.donnnno.android.helpers.core.SoftKeyboardHelper;
+import com.donnnno.android.helpers.core.ViewHelper;
+import com.donnnno.android.helpers.core.utils.LogUtil;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.io.InputStream;

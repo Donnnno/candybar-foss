@@ -1,6 +1,6 @@
 package candybar.lib.helpers;
 
-import static com.danimahardhika.android.helpers.core.FileHelper.getUriFromFile;
+import static com.donnnno.android.helpers.core.FileHelper.getUriFromFile;
 
 import android.app.Activity;
 import android.content.Context;
@@ -21,7 +21,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.utils.LogUtil;
 
 import org.xmlpull.v1.XmlPullParser;
 

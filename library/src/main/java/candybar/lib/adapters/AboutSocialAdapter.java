@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.utils.LogUtil;
 
 import java.util.HashMap;
 import candybar.lib.R;

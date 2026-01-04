@@ -12,9 +12,9 @@ import android.webkit.URLUtil;
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 
-import com.danimahardhika.android.helpers.core.ColorHelper;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.danimahardhika.android.helpers.permission.PermissionHelper;
+import com.donnnno.android.helpers.core.ColorHelper;
+import com.donnnno.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.permission.PermissionHelper;
 import com.danimahardhika.cafebar.CafeBar;
 import com.danimahardhika.cafebar.CafeBarTheme;
 

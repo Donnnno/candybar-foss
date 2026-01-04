@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.danimahardhika.android.helpers.core.ViewHelper;
+import com.donnnno.android.helpers.core.ViewHelper;
 
 import java.util.HashMap;
 

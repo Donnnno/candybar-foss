@@ -1,6 +1,6 @@
 package candybar.lib.helpers;
 
-import static com.danimahardhika.android.helpers.core.DrawableHelper.get;
+import static com.donnnno.android.helpers.core.DrawableHelper.get;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import androidx.annotation.NonNull;
 import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 
-import com.danimahardhika.android.helpers.core.ColorHelper;
+import com.donnnno.android.helpers.core.ColorHelper;
 
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;

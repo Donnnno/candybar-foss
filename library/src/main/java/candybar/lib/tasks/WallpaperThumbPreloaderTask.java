@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.utils.LogUtil;
 
 import java.io.InputStream;
 import java.lang.ref.WeakReference;

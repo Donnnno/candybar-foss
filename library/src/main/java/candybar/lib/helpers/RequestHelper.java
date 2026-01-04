@@ -15,9 +15,9 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.danimahardhika.android.helpers.core.TimeHelper;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.TimeHelper;
+import com.donnnno.android.helpers.core.utils.LogUtil;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -416,20 +416,18 @@ public class RequestHelper {
 
         if (reset)
             message += "\n\n" + context.getResources().getString(R.string.request_limit_reset);
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(R.string.request_title)
-                .content(message)
-                .positiveText(R.string.close)
+        new MaterialAlertDialogBuilder(context)
+                .setTitle(R.string.request_title)
+                .setMessage(message)
+                .setPositiveButton(R.string.close, null)
                 .show();
     }
 
     public static void showPremiumRequestRequired(@NonNull Context context) {
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(R.string.request_title)
-                .content(R.string.premium_request_required)
-                .positiveText(R.string.close)
+        new MaterialAlertDialogBuilder(context)
+                .setTitle(R.string.request_title)
+                .setMessage(R.string.premium_request_required)
+                .setPositiveButton(R.string.close, null)
                 .show();
     }
 
@@ -437,11 +435,10 @@ public class RequestHelper {
         String message = context.getResources().getString(R.string.premium_request_limit,
                 Preferences.get(context).getPremiumRequestCount());
         message += " " + context.getResources().getString(R.string.premium_request_limit1, selected);
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(R.string.premium_request)
-                .content(message)
-                .positiveText(R.string.close)
+        new MaterialAlertDialogBuilder(context)
+                .setTitle(R.string.premium_request)
+                .setMessage(message)
+                .setPositiveButton(R.string.close, null)
                 .show();
     }
 
@@ -449,42 +446,38 @@ public class RequestHelper {
         String message = context.getResources().getString(
                 R.string.premium_request_already_purchased,
                 Preferences.get(context).getPremiumRequestCount());
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(R.string.premium_request)
-                .content(message)
-                .positiveText(R.string.close)
+        new MaterialAlertDialogBuilder(context)
+                .setTitle(R.string.premium_request)
+                .setMessage(message)
+                .setPositiveButton(R.string.close, null)
                 .show();
     }
 
     public static boolean isReadyToSendPremiumRequest(@NonNull Context context) {
         boolean isReady = Preferences.get(context).isConnectedToNetwork();
         if (!isReady) {
-            new MaterialDialog.Builder(context)
-                    .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                    .title(R.string.premium_request)
-                    .content(R.string.premium_request_no_internet)
-                    .positiveText(R.string.close)
+            new MaterialAlertDialogBuilder(context)
+                    .setTitle(R.string.premium_request)
+                    .setMessage(R.string.premium_request_no_internet)
+                    .setPositiveButton(R.string.close, null)
                     .show();
         }
         return isReady;
     }
 
     public static void showPremiumRequestConsumeFailed(@NonNull Context context) {
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(R.string.premium_request)
-                .content(R.string.premium_request_consume_failed)
-                .positiveText(R.string.close)
+        new MaterialAlertDialogBuilder(context)
+                .setTitle(R.string.premium_request)
+                .setMessage(R.string.premium_request_consume_failed)
+                .setPositiveButton(R.string.close, null)
                 .show();
     }
 
     public static void showPremiumRequestExist(@NonNull Context context) {
-        new MaterialDialog.Builder(context)
-                .typeface(TypefaceHelper.getMedium(context), TypefaceHelper.getRegular(context))
-                .title(R.string.premium_request)
-                .content(R.string.premium_request_exist)
-                .positiveText(R.string.close)
+        new MaterialAlertDialogBuilder(context)
+                .setTitle(R.string.premium_request)
+                .setMessage(R.string.premium_request_exist)
+                .setPositiveButton(R.string.close, null)
                 .show();
     }
 

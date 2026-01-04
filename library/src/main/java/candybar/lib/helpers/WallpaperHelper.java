@@ -13,7 +13,7 @@ import android.webkit.URLUtil;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.danimahardhika.android.helpers.core.WindowHelper;
+import com.donnnno.android.helpers.core.WindowHelper;
 
 import java.io.IOException;
 import java.io.InputStream;

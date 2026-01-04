@@ -3,7 +3,7 @@ package candybar.lib.helpers;
 import android.content.Context;
 import android.util.Log;
 
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.utils.LogUtil;
 
 public class PresetsHelper {
 

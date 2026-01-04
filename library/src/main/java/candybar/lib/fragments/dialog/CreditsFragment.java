@@ -3,6 +3,7 @@ package candybar.lib.fragments.dialog;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -12,8 +13,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.utils.LogUtil;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.xmlpull.v1.XmlPullParser;
 
@@ -22,7 +23,6 @@ import java.util.List;
 
 import candybar.lib.R;
 import candybar.lib.adapters.dialog.CreditsAdapter;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Credit;
 import candybar.lib.utils.AsyncTaskBase;
 
@@ -82,14 +82,15 @@ public class CreditsFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
-                .customView(R.layout.fragment_credits, false)
-                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                .title(getTitle(mType))
-                .positiveText(R.string.close)
-                .build();
-        dialog.show();
-        mListView = (ListView) dialog.findViewById(R.id.listview);
+        View view = View.inflate(requireActivity(), R.layout.fragment_credits, null);
+        mListView = view.findViewById(R.id.listview);
+
+        Dialog dialog = new MaterialAlertDialogBuilder(requireActivity())
+                .setTitle(getTitle(mType))
+                .setView(view)
+                .setPositiveButton(R.string.close, null)
+                .create();
+
         mAsyncTask = new CreditsLoader().executeOnThreadPool();
 
         return dialog;

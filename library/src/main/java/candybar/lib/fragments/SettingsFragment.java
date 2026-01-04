@@ -2,6 +2,8 @@ package candybar.lib.fragments;
 
 import static candybar.lib.helpers.DrawableHelper.getPackageIcon;
 import static candybar.lib.helpers.DrawableHelper.getReqIconBase64;
+
+import android.app.Dialog;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -10,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,9 +22,9 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.danimahardhika.android.helpers.core.FileHelper;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.FileHelper;
+import com.donnnno.android.helpers.core.utils.LogUtil;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.io.File;
 import java.text.DecimalFormat;
@@ -38,7 +41,6 @@ import candybar.lib.fragments.dialog.IntentChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.RequestHelper;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Language;
 import candybar.lib.items.Request;
 import candybar.lib.items.Setting;
@@ -230,7 +232,7 @@ public class SettingsFragment extends Fragment {
 
     private class PremiumRequestRebuilder extends AsyncTaskBase {
 
-        private MaterialDialog dialog;
+        private Dialog dialog;
         private boolean isPacific;
         private String pacificApiKey;
         private boolean isCustom;
@@ -245,16 +247,14 @@ public class SettingsFragment extends Fragment {
             isCustom = RequestHelper.isPremiumCustomEnabled(requireActivity());
             isPremium = true;
 
-            dialog = new MaterialDialog.Builder(requireActivity())
-                    .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                    .content(R.string.premium_request_rebuilding)
-                    .cancelable(false)
-                    .canceledOnTouchOutside(false)
-                    .progress(true, 0)
-                    .progressIndeterminateStyle(true)
-                    .build();
+            dialog = new MaterialAlertDialogBuilder(requireActivity())
+                    .setView(R.layout.dialog_progress)
+                    .setCancelable(false)
+                    .create();
 
             dialog.show();
+            TextView textView = dialog.findViewById(R.id.message);
+            if (textView != null) textView.setText(R.string.premium_request_rebuilding);
         }
 
         @Override
@@ -332,8 +332,10 @@ public class SettingsFragment extends Fragment {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
-            dialog.dismiss();
-            dialog = null;
+            if (dialog != null) {
+                dialog.dismiss();
+                dialog = null;
+            }
 
             if (ok) {
                 if (requests.isEmpty()) {
