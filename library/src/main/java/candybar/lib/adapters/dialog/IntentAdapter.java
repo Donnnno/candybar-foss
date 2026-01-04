@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.donnnno.android.helpers.core.ColorHelper;
 import com.donnnno.android.helpers.core.utils.LogUtil;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import java.util.List;
 
@@ -31,7 +32,6 @@ import candybar.lib.items.Request;
 import candybar.lib.tasks.IconRequestBuilderTask;
 import candybar.lib.tasks.PremiumRequestBuilderTask;
 import candybar.lib.utils.AsyncTaskBase;
-import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 
 /*
  * CandyBar - Material Dashboard
@@ -166,7 +166,7 @@ public class IntentAdapter extends BaseAdapter {
         private final TextView type;
         private final ImageView icon;
         private final LinearLayout container;
-        private final MaterialProgressBar progressBar;
+        private final CircularProgressIndicator progressBar;
 
         ViewHolder(View view) {
             name = view.findViewById(R.id.name);
