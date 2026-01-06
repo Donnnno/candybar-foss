@@ -21,28 +21,6 @@ plugins {
     id 'maven-publish'
 }
 
-publishing {
-    publications {
-        release(MavenPublication) {
-            groupId = 'com.github.donnnno.candybar'
-            artifactId = 'library'
-            version = rootProject.ext.VersionName
-
-            afterEvaluate {
-                from components.release
-            }
-        }
-    }
-}
-
-allprojects {
-    tasks.withType(JavaCompile).tap {
-        configureEach {
-            // options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
-        }
-    }
-}
-
 android {
     compileSdk = rootProject.ext.CompileSdk
 
@@ -61,8 +39,6 @@ android {
             consumerProguardFiles 'proguard-rules.pro'
         }
     }
-
-
 
     packagingOptions {
         resources {
@@ -85,6 +61,28 @@ android {
 
     buildFeatures {
         buildConfig = true
+    }
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.donnnno'
+            artifactId = 'candybar-foss'
+            version = rootProject.ext.VersionName
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
+}
+
+allprojects {
+    tasks.withType(JavaCompile).tap {
+        configureEach {
+            // options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
     }
 }
 
