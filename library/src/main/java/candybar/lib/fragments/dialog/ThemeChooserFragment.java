@@ -3,6 +3,7 @@ package candybar.lib.fragments.dialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -11,13 +12,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.afollestad.materialdialogs.MaterialDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.Arrays;
 
 import candybar.lib.R;
 import candybar.lib.adapters.dialog.ThemeAdapter;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Theme;
 import candybar.lib.preferences.Preferences;
 
@@ -67,15 +67,15 @@ public class ThemeChooserFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
-                .customView(R.layout.fragment_languages, false)
-                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                .title(R.string.pref_theme_header)
-                .negativeText(R.string.close)
-                .build();
-        dialog.show();
+        View view = View.inflate(requireActivity(), R.layout.fragment_languages, null);
+        ListView listView = view.findViewById(R.id.listview);
 
-        ListView listView = (ListView) dialog.findViewById(R.id.listview);
+        Dialog dialog = new MaterialAlertDialogBuilder(requireActivity())
+                .setTitle(R.string.pref_theme_header)
+                .setView(view)
+                .setNegativeButton(R.string.close, null)
+                .create();
+
         mChosenTheme = mCurrentTheme = Preferences.get(requireActivity()).getTheme();
 
         listView.setAdapter(new ThemeAdapter(requireActivity(), Arrays.asList(Theme.values()), mCurrentTheme.ordinal()));

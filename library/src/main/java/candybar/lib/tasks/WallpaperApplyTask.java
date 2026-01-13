@@ -1,6 +1,7 @@
 package candybar.lib.tasks;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.WallpaperManager;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,26 +10,25 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Build;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.danimahardhika.android.helpers.core.ColorHelper;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.danimahardhika.cafebar.CafeBar;
-import com.danimahardhika.cafebar.CafeBarTheme;
+import com.donnnno.android.helpers.core.utils.LogUtil;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.lang.ref.WeakReference;
 import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 
 import candybar.lib.R;
-import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.ImageSize;
 import candybar.lib.items.Wallpaper;
@@ -59,7 +59,7 @@ public class WallpaperApplyTask extends AsyncTaskBase implements WallpaperProper
     private Apply mApply;
     private RectF mRectF;
     private Wallpaper mWallpaper;
-    private MaterialDialog mDialog;
+    private Dialog mDialog;
 
     public WallpaperApplyTask(@NonNull Context context, @NonNull Wallpaper wallpaper) {
         mContext = new WeakReference<>(context);
@@ -80,26 +80,18 @@ public class WallpaperApplyTask extends AsyncTaskBase implements WallpaperProper
     @Override
     protected AsyncTaskBase execute(ExecutorService executorService) {
         if (mDialog == null) {
-            int color = mWallpaper.getColor();
-            if (color == 0) {
-                color = ColorHelper.getAttributeColor(mContext.get(), com.google.android.material.R.attr.colorSecondary);
-            }
-
-            final MaterialDialog.Builder builder = new MaterialDialog.Builder(mContext.get());
-            builder.widgetColor(color)
-                    .typeface(TypefaceHelper.getMedium(mContext.get()), TypefaceHelper.getRegular(mContext.get()))
-                    .progress(true, 0)
-                    .cancelable(false)
-                    .progressIndeterminateStyle(true)
-                    .content(R.string.wallpaper_loading)
-                    .positiveColor(color)
-                    .positiveText(android.R.string.cancel)
-                    .onPositive((dialog, which) -> cancel(true));
-
-            mDialog = builder.build();
+            mDialog = new MaterialAlertDialogBuilder(mContext.get())
+                    .setView(R.layout.dialog_progress)
+                    .setCancelable(false)
+                    .setPositiveButton(android.R.string.cancel, (dialog, which) -> cancel(true))
+                    .create();
         }
 
-        if (!mDialog.isShowing()) mDialog.show();
+        if (!mDialog.isShowing()) {
+            mDialog.show();
+            TextView textView = mDialog.findViewById(R.id.message);
+            if (textView != null) textView.setText(R.string.wallpaper_loading);
+        }
 
         if (mWallpaper == null) {
             LogUtil.e("WallpaperApply cancelled, wallpaper is null");
@@ -233,7 +225,10 @@ public class WallpaperApplyTask extends AsyncTaskBase implements WallpaperProper
                              */
                             LogUtil.d(String.format(Locale.getDefault(), "loaded bitmap: %d x %d",
                                     loadedBitmap.getWidth(), loadedBitmap.getHeight()));
-                            runOnUiThread(() -> mDialog.setContent(R.string.wallpaper_applying));
+                            runOnUiThread(() -> {
+                                TextView textView = mDialog.findViewById(R.id.message);
+                                if (textView != null) textView.setText(R.string.wallpaper_applying);
+                            });
 
                             Bitmap bitmap = loadedBitmap;
                             if (Preferences.get(mContext.get()).isCropWallpaper() && adjustedRectF != null) {
@@ -352,14 +347,10 @@ public class WallpaperApplyTask extends AsyncTaskBase implements WallpaperProper
         }
 
         if (ok) {
-            CafeBar.builder(mContext.get())
-                    .theme(CafeBarTheme.Custom(ColorHelper.getAttributeColor(
-                            mContext.get(), R.attr.cb_cardBackground)))
-                    .contentTypeface(TypefaceHelper.getRegular(mContext.get()))
-                    .floating(true)
-                    .fitSystemWindow()
-                    .content(R.string.wallpaper_applied)
-                    .show();
+            View view = ((AppCompatActivity) mContext.get()).findViewById(android.R.id.content);
+            if (view != null) {
+                Snackbar.make(view, R.string.wallpaper_applied, Snackbar.LENGTH_LONG).show();
+            }
         } else {
             Toast.makeText(mContext.get(), R.string.wallpaper_apply_failed,
                     Toast.LENGTH_LONG).show();

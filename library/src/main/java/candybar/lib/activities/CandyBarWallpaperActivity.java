@@ -40,10 +40,10 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.target.Target;
-import com.danimahardhika.android.helpers.animation.AnimationHelper;
-import com.danimahardhika.android.helpers.core.ColorHelper;
-import com.danimahardhika.android.helpers.core.DrawableHelper;
-import com.danimahardhika.android.helpers.permission.PermissionCode;
+import com.donnnno.android.helpers.animation.AnimationHelper;
+import com.donnnno.android.helpers.core.ColorHelper;
+import com.donnnno.android.helpers.core.DrawableHelper;
+import com.donnnno.android.helpers.permission.PermissionCode;
 import com.kogitune.activitytransition.ActivityTransition;
 import com.kogitune.activitytransition.ExitActivityTransition;
 

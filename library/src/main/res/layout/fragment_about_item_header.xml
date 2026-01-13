@@ -53,11 +53,11 @@
         android:textSize="@dimen/text_content"
         app:fontFamily="@font/regular"
         android:theme="@style/AccentChange" />
-    
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="wrap_content"
         android:padding="@dimen/content_margin"
         android:clipToPadding="false" />
 

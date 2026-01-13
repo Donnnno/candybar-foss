@@ -16,12 +16,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-import com.danimahardhika.android.helpers.core.ColorHelper;
-import com.danimahardhika.android.helpers.core.DrawableHelper;
+import com.donnnno.android.helpers.core.ColorHelper;
+import com.donnnno.android.helpers.core.DrawableHelper;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -30,7 +30,6 @@ import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.databases.Database;
 import candybar.lib.fragments.IconsFragment;
-import candybar.lib.helpers.TypefaceHelper;
 
 /*
  * CandyBar - Material Dashboard
@@ -99,13 +98,12 @@ public class IconPreviewFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        MaterialDialog dialog = new MaterialDialog.Builder(requireActivity())
-                .customView(R.layout.fragment_icon_preview, false)
-                .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                .positiveText(R.string.close)
-                .build();
+        View view = View.inflate(requireActivity(), R.layout.fragment_icon_preview, null);
 
-        dialog.show();
+        Dialog dialog = new MaterialAlertDialogBuilder(requireActivity())
+                .setView(view)
+                .setPositiveButton(R.string.close, null)
+                .create();
 
         if (savedInstanceState != null) {
             mIconTitle = savedInstanceState.getString(TITLE);
@@ -113,9 +111,9 @@ public class IconPreviewFragment extends DialogFragment {
             mIconId = savedInstanceState.getInt(ID);
         }
 
-        TextView name = (TextView) dialog.findViewById(R.id.name);
-        ImageView icon = (ImageView) dialog.findViewById(R.id.icon);
-        ImageView bookmark = (ImageView) dialog.findViewById(R.id.bookmark_button);
+        TextView name = view.findViewById(R.id.name);
+        ImageView icon = view.findViewById(R.id.icon);
+        ImageView bookmark = view.findViewById(R.id.bookmark_button);
 
         name.setText(mIconTitle);
 
@@ -157,7 +155,7 @@ public class IconPreviewFragment extends DialogFragment {
 
             updateBookmark.run();
 
-            bookmark.setOnClickListener(view -> {
+            bookmark.setOnClickListener(v -> {
                 if (isBookmarked.get()) {
                     CandyBarApplication.getConfiguration().getAnalyticsHandler().logEvent(
                             "click",

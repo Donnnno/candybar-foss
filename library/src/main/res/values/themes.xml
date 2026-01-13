@@ -98,14 +98,31 @@
         <item name="actionModeStyle">@style/ActionModeStyle</item>
         <item name="actionBarTheme">@style/ActionBarOverlay</item>
 
-        <item name="md_background_color">?cb_cardBackground</item>
-        <item name="md_positive_color">?cb_colorAccent</item>
-        <item name="md_neutral_color">?cb_primaryText</item>
-        <item name="md_negative_color">?cb_primaryText</item>
-        <item name="md_content_color">?cb_primaryText</item>
-        <item name="md_link_color">?cb_colorAccent</item>
-        <item name="md_widget_color">?cb_colorAccent</item>
-        <item name="md_item_color">?cb_primaryText</item>
+        <!-- Material Dialogs -->
+        <item name="materialAlertDialogTheme">@style/CandyBar.Style.Dialog.Alert</item>
+    </style>
+
+    <style name="CandyBar.Style.Dialog.Alert" parent="Theme.Material3.Light.Dialog.Alert">
+        <item name="backgroundTint">?cb_cardBackground</item>
+        <item name="colorAccent">?cb_colorAccent</item>
+        <item name="colorPrimary">?cb_colorAccent</item>
+        <item name="android:textColorPrimary">?cb_primaryText</item>
+        <item name="android:textColorSecondary">?cb_secondaryText</item>
+        <item name="buttonBarPositiveButtonStyle">@style/CandyBar.Style.Dialog.Button.Positive</item>
+        <item name="buttonBarNegativeButtonStyle">@style/CandyBar.Style.Dialog.Button.Negative</item>
+        <item name="buttonBarNeutralButtonStyle">@style/CandyBar.Style.Dialog.Button.Neutral</item>
+    </style>
+
+    <style name="CandyBar.Style.Dialog.Button.Positive" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">?cb_colorAccent</item>
+    </style>
+
+    <style name="CandyBar.Style.Dialog.Button.Negative" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">?cb_primaryText</item>
+    </style>
+
+    <style name="CandyBar.Style.Dialog.Button.Neutral" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">?cb_primaryText</item>
     </style>
 
     <style name="CandyBar.Theme.App.DayNight" parent="CandyBar.Theme.Base" />

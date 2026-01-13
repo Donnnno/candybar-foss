@@ -56,5 +56,8 @@
         <!-- Wallpaper Preview -->
         <item name="cb_wallpaperStatusBar">#66000000</item>
         <item name="cb_wallpaperToolbar">#66000000</item>
+
+        <!-- Material Dialogs -->
+        <item name="materialAlertDialogTheme">@style/CandyBar.Style.Dialog.Alert</item>
     </style>
 </resources>

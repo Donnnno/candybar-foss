@@ -9,7 +9,6 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,16 +21,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-import com.danimahardhika.android.helpers.core.ColorHelper;
-import com.danimahardhika.android.helpers.core.DrawableHelper;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.ColorHelper;
+import com.donnnno.android.helpers.core.DrawableHelper;
+import com.donnnno.android.helpers.core.utils.LogUtil;
+import com.google.android.flexbox.FlexDirection;
+import com.google.android.flexbox.FlexWrap;
+import com.google.android.flexbox.FlexboxLayoutManager;
+import com.google.android.flexbox.JustifyContent;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.HashMap;
@@ -202,7 +204,13 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             TextView subtitle = itemView.findViewById(R.id.subtitle);
             RecyclerView recyclerView = itemView.findViewById(R.id.recyclerview);
             recyclerView.setItemAnimator(new DefaultItemAnimator());
-            recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, true));
+            
+            FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(mContext);
+            layoutManager.setFlexDirection(FlexDirection.ROW);
+            layoutManager.setJustifyContent(JustifyContent.CENTER);
+            layoutManager.setFlexWrap(FlexWrap.WRAP);
+            recyclerView.setLayoutManager(layoutManager);
+            
             recyclerView.setHasFixedSize(true);
 
             String[] urls = mContext.getResources().getStringArray(R.array.about_social_links);
@@ -215,13 +223,6 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                         subtitle.getPaddingRight(),
                         subtitle.getPaddingBottom() + mContext.getResources().getDimensionPixelSize(R.dimen.content_margin));
             } else {
-                if (recyclerView.getLayoutParams() instanceof LinearLayout.LayoutParams params) {
-                    if (urls.length < 7) {
-                        params.width = LinearLayout.LayoutParams.WRAP_CONTENT;
-                        params.gravity = Gravity.CENTER_HORIZONTAL;
-                        recyclerView.setOverScrollMode(View.OVER_SCROLL_NEVER);
-                    }
-                }
                 recyclerView.setAdapter(new AboutSocialAdapter(mContext, urls));
             }
 

@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 
-import static com.danimahardhika.android.helpers.core.DrawableHelper.getTintedDrawable;
+import static com.donnnno.android.helpers.core.DrawableHelper.getTintedDrawable;
 
 /*
  * CandyBar - Material Dashboard

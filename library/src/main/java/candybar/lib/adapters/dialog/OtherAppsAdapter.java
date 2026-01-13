@@ -20,8 +20,9 @@ import androidx.annotation.NonNull;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.utils.LogUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import candybar.lib.R;
@@ -53,7 +54,7 @@ public class OtherAppsAdapter extends BaseAdapter {
 
     public OtherAppsAdapter(@NonNull Context context, @NonNull List<? extends CandyBarApplication.OtherApp> otherApps) {
         mContext = context;
-        mOtherApps = (List<CandyBarApplication.OtherApp>) otherApps;
+        mOtherApps = new ArrayList<>(otherApps);
     }
 
     @Override

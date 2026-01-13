@@ -6,7 +6,7 @@ import android.graphics.Point;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.danimahardhika.android.helpers.core.ColorHelper;
+import com.donnnno.android.helpers.core.ColorHelper;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
 import java.util.Locale;

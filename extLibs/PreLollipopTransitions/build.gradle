@@ -37,22 +37,16 @@ publishing {
 android {
     compileSdk = rootProject.ext.CompileSdk
 
-    namespace 'com.kogitune.activity_transition'
+    namespace = 'com.kogitune.activity_transition'
 
     defaultConfig {
-        minSdkVersion rootProject.ext.MinSdk
-        targetSdkVersion rootProject.ext.TargetSdk
+        minSdk = rootProject.ext.MinSdk
+        targetSdk = rootProject.ext.TargetSdk
     }
 
     buildTypes {
         release {
-            minifyEnabled false
-        }
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
+            minifyEnabled = false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -72,5 +66,5 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
 }

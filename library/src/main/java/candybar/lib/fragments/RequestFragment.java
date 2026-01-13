@@ -1,5 +1,10 @@
 package candybar.lib.fragments;
 
+import static candybar.lib.helpers.DrawableHelper.getPackageIcon;
+import static candybar.lib.helpers.DrawableHelper.getReqIconBase64;
+import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
+
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.ResolveInfo;
@@ -18,6 +23,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,12 +37,12 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.danimahardhika.android.helpers.animation.AnimationHelper;
-import com.danimahardhika.android.helpers.core.ColorHelper;
-import com.danimahardhika.android.helpers.core.FileHelper;
-import com.danimahardhika.android.helpers.core.ViewHelper;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.animation.AnimationHelper;
+import com.donnnno.android.helpers.core.ColorHelper;
+import com.donnnno.android.helpers.core.FileHelper;
+import com.donnnno.android.helpers.core.ViewHelper;
+import com.donnnno.android.helpers.core.utils.LogUtil;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.pluscubed.recyclerfastscroll.RecyclerFastScroller;
 
@@ -56,19 +62,15 @@ import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.adapters.RequestAdapter;
 import candybar.lib.applications.CandyBarApplication;
+import candybar.lib.databases.Database;
 import candybar.lib.fragments.dialog.IntentChooserFragment;
 import candybar.lib.helpers.IconsHelper;
 import candybar.lib.helpers.RequestHelper;
 import candybar.lib.helpers.TapIntroHelper;
-import candybar.lib.helpers.TypefaceHelper;
-import candybar.lib.databases.Database;
 import candybar.lib.items.Request;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.utils.AsyncTaskBase;
 import candybar.lib.utils.listeners.RequestListener;
-import static candybar.lib.helpers.DrawableHelper.getReqIconBase64;
-import static candybar.lib.helpers.DrawableHelper.getPackageIcon;
-import static candybar.lib.helpers.ViewHelper.setFastScrollColor;
 
 /*
  * CandyBar - Material Dashboard
@@ -287,7 +289,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
         if (mRecyclerView == null) return;
 
         int padding = 0;
-        boolean tabletMode = getResources().getBoolean(com.danimahardhika.android.helpers.core.R.bool.android_helpers_tablet_mode);
+        boolean tabletMode = getResources().getBoolean(com.donnnno.android.helpers.core.R.bool.android_helpers_tablet_mode);
         if (tabletMode || orientation == Configuration.ORIENTATION_LANDSCAPE) {
             padding = requireActivity().getResources().getDimensionPixelSize(R.dimen.content_padding);
 
@@ -387,7 +389,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
     private class RequestLoader extends AsyncTaskBase {
 
-        private MaterialDialog dialog;
+        private Dialog dialog;
         private boolean isPacific;
         private String pacificApiKey;
         private boolean isCustom;
@@ -408,16 +410,14 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                 pacificApiKey = RequestHelper.getRegularPacificApiKey(requireActivity());
             }
 
-            dialog = new MaterialDialog.Builder(requireActivity())
-                    .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                    .content(R.string.request_building)
-                    .cancelable(false)
-                    .canceledOnTouchOutside(false)
-                    .progress(true, 0)
-                    .progressIndeterminateStyle(true)
-                    .build();
+            dialog = new MaterialAlertDialogBuilder(requireActivity())
+                    .setView(R.layout.dialog_progress)
+                    .setCancelable(false)
+                    .create();
 
             dialog.show();
+            TextView textView = dialog.findViewById(R.id.message);
+            if (textView != null) textView.setText(R.string.request_building);
         }
 
         @Override
@@ -505,9 +505,11 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             if (getActivity() == null) return;
             if (getActivity().isFinishing()) return;
 
-            dialog.dismiss();
+            if (dialog != null) {
+                dialog.dismiss();
+                dialog = null;
+            }
             mAsyncTask = null;
-            dialog = null;
 
             if (ok) {
                 if (isPacific || isCustom) {
@@ -523,13 +525,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
             } else {
                 if (isPacific || isCustom) {
                     int content = isPacific ? R.string.request_pacific_error : R.string.request_custom_error;
-                    new MaterialDialog.Builder(getActivity())
-                            .typeface(TypefaceHelper.getMedium(getActivity()), TypefaceHelper.getRegular(getActivity()))
-                            .content(content, "\"" + errorMessage + "\"")
-                            .cancelable(true)
-                            .canceledOnTouchOutside(false)
-                            .positiveText(R.string.close)
-                            .build()
+                    new MaterialAlertDialogBuilder(getActivity())
+                            .setMessage(getString(content, "\"" + errorMessage + "\""))
+                            .setPositiveButton(R.string.close, null)
                             .show();
                 } else if (noEmailClientError) {
                     Toast.makeText(getActivity(), R.string.no_email_app,
@@ -544,22 +542,20 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
     public class CheckConfig extends AsyncTaskBase {
 
-        private MaterialDialog dialog;
+        private Dialog dialog;
         private boolean canRequest = true;
         private String updateUrl;
 
         @Override
         protected void preRun() {
-            dialog = new MaterialDialog.Builder(requireActivity())
-                    .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                    .content(R.string.request_fetching_data)
-                    .cancelable(false)
-                    .canceledOnTouchOutside(false)
-                    .progress(true, 0)
-                    .progressIndeterminateStyle(true)
-                    .build();
+            dialog = new MaterialAlertDialogBuilder(requireActivity())
+                    .setView(R.layout.dialog_progress)
+                    .setCancelable(false)
+                    .create();
 
             dialog.show();
+            TextView textView = dialog.findViewById(R.id.message);
+            if (textView != null) textView.setText(R.string.request_fetching_data);
         }
 
         @Override
@@ -618,24 +614,22 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
         @Override
         protected void postRun(boolean ok) {
-            dialog.dismiss();
-            dialog = null;
+            if (dialog != null) {
+                dialog.dismiss();
+                dialog = null;
+            }
 
             if (ok) {
                 if (!canRequest) {
-                    new MaterialDialog.Builder(requireActivity())
-                            .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                            .content(R.string.request_app_disabled)
-                            .negativeText(R.string.close)
-                            .positiveText(R.string.update)
-                            .onPositive(((dialog, which) -> {
+                    new MaterialAlertDialogBuilder(requireActivity())
+                            .setMessage(R.string.request_app_disabled)
+                            .setNegativeButton(R.string.close, null)
+                            .setPositiveButton(R.string.update, (dialog, which) -> {
                                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(updateUrl));
                                 intent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
                                 requireActivity().startActivity(intent);
-                            }))
-                            .cancelable(false)
-                            .canceledOnTouchOutside(false)
-                            .build()
+                            })
+                            .setCancelable(false)
                             .show();
 
                     mAdapter.resetSelectedItems();
@@ -644,12 +638,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     mAsyncTask = new RequestLoader().executeOnThreadPool();
                 }
             } else {
-                new MaterialDialog.Builder(requireActivity())
-                        .typeface(TypefaceHelper.getMedium(requireActivity()), TypefaceHelper.getRegular(requireActivity()))
-                        .content(R.string.unable_to_load_config)
-                        .canceledOnTouchOutside(false)
-                        .positiveText(R.string.close)
-                        .build()
+                new MaterialAlertDialogBuilder(requireActivity())
+                        .setMessage(R.string.unable_to_load_config)
+                        .setPositiveButton(R.string.close, null)
                         .show();
             }
         }

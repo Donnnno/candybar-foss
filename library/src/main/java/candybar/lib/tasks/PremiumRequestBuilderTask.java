@@ -11,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.danimahardhika.android.helpers.core.FileHelper;
-import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.donnnno.android.helpers.core.FileHelper;
+import com.donnnno.android.helpers.core.utils.LogUtil;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
