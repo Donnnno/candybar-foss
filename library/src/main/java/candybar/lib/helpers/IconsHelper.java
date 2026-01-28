@@ -92,14 +92,14 @@ public class IconsHelper {
         List<Icon> icons = new ArrayList<>();
         List<Icon> sections = new ArrayList<>();
 
-        int count = 0;
+        Set<Integer> uniqueIds = new HashSet<>();
         while (eventType != XmlPullParser.END_DOCUMENT) {
             if (eventType == XmlPullParser.START_TAG) {
                 if (parser.getName().equals("category")) {
                     String title = parser.getAttributeValue(null, "title");
                     if (!sectionTitle.equals(title)) {
-                        if (sectionTitle.length() > 0 && icons.size() > 0) {
-                            count += icons.size();
+                        if (!sectionTitle.isEmpty() && !icons.isEmpty()) {
+
                             sections.add(new Icon(sectionTitle, icons));
                         }
                     }
@@ -111,17 +111,17 @@ public class IconsHelper {
                     int id = DrawableHelper.getDrawableId(drawableName);
                     if (id > 0) {
                         icons.add(new Icon(drawableName, customName, id));
+                        uniqueIds.add(id);
                     }
                 }
             }
 
             eventType = parser.next();
         }
-        count += icons.size();
-        CandyBarMainActivity.sIconsCount = count;
+        CandyBarMainActivity.sIconsCount = uniqueIds.size();
         if (!CandyBarApplication.getConfiguration().isAutomaticIconsCountEnabled() &&
                 CandyBarApplication.getConfiguration().getCustomIconsCount() == 0) {
-            CandyBarApplication.getConfiguration().setCustomIconsCount(count);
+            CandyBarApplication.getConfiguration().setCustomIconsCount(CandyBarMainActivity.sIconsCount);
         }
         if (icons.size() > 0) {
             sections.add(new Icon(sectionTitle, icons));
