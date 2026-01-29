@@ -146,14 +146,6 @@ public class WallpapersFragment extends Fragment {
         View clearQueryButton = searchView.findViewById(R.id.clear_query_button);
 
         searchInput.setHint(requireActivity().getResources().getString(R.string.search_wallpapers));
-        searchInput.requestFocus();
-
-        new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            if (getActivity() != null) {
-                SoftKeyboardHelper.openKeyboard(getActivity());
-            }
-        }, 1000);
-
         searchInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -182,7 +174,7 @@ public class WallpapersFragment extends Fragment {
                     if (getActivity() != null) {
                         SoftKeyboardHelper.openKeyboard(getActivity());
                     }
-                }, 1000);
+                }, 300);
 
                 return true;
             }
@@ -190,6 +182,11 @@ public class WallpapersFragment extends Fragment {
             @Override
             public boolean onMenuItemActionCollapse(MenuItem menuItem) {
                 searchInput.setText("");
+                new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                if (getActivity() != null) {
+                    SoftKeyboardHelper.closeKeyboard(getActivity());
+                }
+                }, 300);
                 return true;
             }
         });
