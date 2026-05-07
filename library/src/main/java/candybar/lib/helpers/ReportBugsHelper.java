@@ -72,7 +72,7 @@ public class ReportBugsHelper {
         TextInputLayout inputLayout = (TextInputLayout) dialog.findViewById(R.id.input_layout);
 
         dialog.getActionButton(DialogAction.POSITIVE).setOnClickListener(view -> {
-            if (!editText.getText().isEmpty()) {
+            if (editText.getText().length() != 0) {
                 inputLayout.setErrorEnabled(false);
                 new ReportBugsTask(context, editText.getText().toString()).executeOnThreadPool();
                 dialog.dismiss();

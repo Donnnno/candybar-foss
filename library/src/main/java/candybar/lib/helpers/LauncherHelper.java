@@ -12,6 +12,7 @@ import android.os.Build;
 import android.util.Pair;
 import android.widget.Toast;
 
+import androidx.annotation.ChecksSdkIntAtLeast;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 
@@ -435,6 +436,7 @@ public class LauncherHelper {
                 NO_SETTINGS_ACTIVITY, // TODO: Could link to Theme Park if available
                 DIRECT_APPLY_NOT_SUPPORTED,
                 new ManualApply() {
+                    @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.S)
                     @Override
                     public boolean isSupported(String launcherPackageName) {
                         return Build.VERSION.SDK_INT > Build.VERSION_CODES.R;

@@ -428,7 +428,7 @@ public class Database extends SQLiteOpenHelper {
             values.put(KEY_COLOR, wallpaper.getColor());
         }
 
-        if (!values.isEmpty()) {
+        if (values.size() != 0) {
             mDatabase.get().mSQLiteDatabase.update(TABLE_WALLPAPERS,
                     values, KEY_URL + " = ?", new String[]{wallpaper.getURL()});
         }
