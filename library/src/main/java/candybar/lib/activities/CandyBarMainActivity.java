@@ -506,6 +506,10 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             mDrawerToggle.setDrawerIndicatorEnabled(true);
         }
 
+        if (WallpaperHelper.getWallpaperType(this) == WallpaperHelper.EXTERNAL_APP) {
+            mNavigationView.getMenu().findItem(R.id.navigation_view_wallpapers).setTitle(R.string.navigation_view_wallpaper_app);
+        }
+
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
         mDrawerLayout.addDrawerListener(mDrawerToggle);
 

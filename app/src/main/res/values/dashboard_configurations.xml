@@ -65,6 +65,7 @@
     <string name="premium_request_arctic_api_key"></string>
 
     <!-- CONFIG: CLOUD WALLPAPERS -->
+    <!--<string name="wallpaper_json">com.candybar.sample</string>-->
     <string name="wallpaper_json">https://zixpo.github.io/candybar-sources/walls.json</string>
     <!--<string name="wallpaper_json">https://delta-icons.github.io/wallpapers/config.json</string> -->
     <!--<string name="wallpaper_json">assets://wallpapers_offline.json</string>-->

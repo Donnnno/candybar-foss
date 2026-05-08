@@ -136,7 +136,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             if (Preferences.get(mContext).isPremiumRequestEnabled()) {
                 if (Preferences.get(mContext).isPremiumRequest()) {
                     HeaderViewHolder.button.setVisibility(View.GONE);
-                    HeaderViewHolder.premContent.setVisibility(View.GONE);
+                    // HeaderViewHolder.premContent.setVisibility(View.GONE);
                     HeaderViewHolder.premContainer.setVisibility(View.VISIBLE);
 
                     int total = Preferences.get(mContext).getPremiumRequestTotal();
