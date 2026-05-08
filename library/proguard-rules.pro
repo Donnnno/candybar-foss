@@ -1,6 +1,6 @@
 # Keep the source line when using ProGuard
 -keepattributes SourceFile, LineNumberTable
--renamesourcefileattribute SourceFile
+# -renamesourcefileattribute SourceFile
 
 # LoganSquare JSON parser
 -keep class com.bluelinelabs.logansquare.** { *; }
