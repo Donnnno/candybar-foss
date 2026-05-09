@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="changelog_date" translatable="false">October 16, 2025</string>
+    <string name="changelog_date" translatable="false">May 9, 2026</string>
 
     <string-array name="changelog">
-        <item><![CDATA[
-            Upstream changes from version 3.22.2 (check the changelog <a href="https://github.com/zixpo/candybar/blob/main/CHANGELOG.md">here</a>)
-        ]]></item>
+        <item>Fix crash on Android 9</item>
+        <item>Now shows "Wallpaper App" on navigation drawer when external app is set as wallpaper provider</item>
+        <item>Minor fixes</item>
+        <item>Updated Gradle and AGP</item>
+        <item>Updated translations</item>
     </string-array>
 
 </resources>

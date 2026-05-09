@@ -2,6 +2,14 @@
 
 [Donnnno]: https://github.com/Donnnno
 
+# v3.23.0
+- Upstream changes from 3.23.0 below
+- Fix crash on Android 9
+- Now shows "Wallpaper App" on navigation drawer when external app is set as wallpaper provider
+- Minor fixes
+- Updated Gradle and AGP
+- Updated translations
+
 # v3.22.2
 - Upstream changes from 3.22.2 
 
