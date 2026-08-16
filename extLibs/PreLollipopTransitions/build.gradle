@@ -37,7 +37,7 @@ publishing {
 android {
     compileSdk = rootProject.ext.CompileSdk
 
-    namespace 'com.kogitune.activity_transition'
+    namespace = 'com.kogitune.activity_transition'
 
     defaultConfig {
         minSdkVersion rootProject.ext.MinSdk
@@ -77,5 +77,5 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.8.0'
 }
